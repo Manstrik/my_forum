@@ -61,4 +61,4 @@ services:
       - POSTGRES_USER=nikolay
       - POSTGRES_PASSWORD=Crowel_16
     networks:
-      - server-postgres
+      - django-postgres
