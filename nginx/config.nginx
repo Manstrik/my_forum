@@ -1,0 +1,19 @@
+server {
+  listen 80;
+  server_name vps706754.ovh.net;
+  client_max_body_size 16M;
+
+  gzip on;
+  gzip_comp_level 5;
+  gzip_min_length 10240;
+  gzip_proxied any;
+  gzip_vary on;
+  gzip_types *;
+
+  location / {
+    proxy_pass http://server:8000;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
