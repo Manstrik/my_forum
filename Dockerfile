@@ -17,4 +17,4 @@ ENTRYPOINT mkdir -p pids logs \
         && rm -rf nginx \
         && python manage.py migrate \
         && python manage.py collectstatic --noinput \
-        && gunicorn backend.wsgi -b 0.0.0.0:8000 -p pids/gunicorn.pid --access-logfile logs/gunicorn-access.log --log-file logs/gunicorn.log
+        && gunicorn my_forum.wsgi -b 0.0.0.0:8000 -p pids/gunicorn.pid --access-logfile logs/gunicorn-access.log --log-file logs/gunicorn.log

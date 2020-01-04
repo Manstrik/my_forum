@@ -10,9 +10,9 @@ networks:
 
 volumes:
   static:
-    name: static
+    name: vlad-static
   postgres_data:
-    name: postgres_data
+    name: vlad-postgres_data
     driver_opts:
       type: none
       o: bind
@@ -41,7 +41,7 @@ services:
       - ./settings.yml:/app/settings.yml
     restart: always
     container_name: django
-    image: kolenich/django
+    image: manstrik/my_forum
     environment:
       - PROJECT_MODE=production
     networks:
@@ -52,7 +52,7 @@ services:
 
   postgres:
     restart: always
-    container_name: postgres
+    container_name: vlad-postgres
     image: postgres:12-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
