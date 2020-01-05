@@ -1,1 +1,1 @@
-# Register your models here.
+"""Файл админки приложения title_page."""

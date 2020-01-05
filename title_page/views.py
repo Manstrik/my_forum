@@ -1,1 +1,1 @@
-# Create your views here.
+"""Представления для приложения title_page."""

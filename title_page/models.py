@@ -1,1 +1,1 @@
-# Create your models here.
+"""Модели приложения title_page."""
