@@ -131,4 +131,6 @@ dmypy.json
 .pyre/
 
 .*
+docker-compose.yml
+Dockerfile*
 
