@@ -31,8 +31,6 @@ services:
     networks:
       - proxy
       - default
-    ports:
-      - 8000:80
     depends_on:
       - my_forum-django
 
