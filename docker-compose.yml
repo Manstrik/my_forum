@@ -28,6 +28,9 @@ services:
     restart: always
     container_name: my_forum-nginx
     image: nginx:1.17-alpine
+    networks:
+      - proxy
+      - default
     ports:
       - 8000:80
     depends_on:
