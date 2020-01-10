@@ -77,7 +77,7 @@ DATABASES = {
         'NAME': 'test',
         'USER': 'test',
         'PASSWORD': 'test',
-        'HOST': 'postgres',
+        'HOST': 'my_forum-postgres',
     }
 }
 
