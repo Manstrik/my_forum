@@ -17,10 +17,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('title_page.urls', namespace='title_page'))
+    # Раздел редиректа
+    path('', RedirectView.as_view(url='title/')),
+    # Приложение title_page
+    path('title/', include('title_page.urls', namespace='title_page')),
+
 ]
 
 if settings.DEBUG:
