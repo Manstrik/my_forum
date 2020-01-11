@@ -9,6 +9,10 @@ body {
   margin: 0 auto;
 }
 
+.section a {
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   justify-content: space-around;

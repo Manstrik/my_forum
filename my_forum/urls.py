@@ -20,6 +20,7 @@ from django.urls import include, path
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
+    # Админка сайта
     path('admin/', admin.site.urls),
     # Раздел редиректа
     path('', RedirectView.as_view(url='title/')),

@@ -16,6 +16,7 @@
       Здарова
     </h1>
     <a href="{% url 'title_page:index' %}">На главную</a>
+    <a href="{% url 'admin:index' %}">Админка</a>
     {% for user in users %}
       <p>{{ user.username }}</p>
     {% empty %}
