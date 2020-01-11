@@ -25,7 +25,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url='title/')),
     # Приложение title_page
     path('title/', include('title_page.urls', namespace='title_page')),
-
 ]
 
 if settings.DEBUG:
