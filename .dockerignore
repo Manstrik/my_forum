@@ -133,4 +133,5 @@ dmypy.json
 .*
 docker-compose.yml
 Dockerfile*
+static
 
