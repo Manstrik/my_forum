@@ -4,12 +4,16 @@ WORKDIR /app
 
 EXPOSE 8000
 
-RUN pip install --upgrade pip \
+RUN apt update \
+ && apt install gcc -y \
+ && pip install --upgrade pip \
  && pip install gunicorn
 
 COPY requirements.txt /app/
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt \
+ && apt remove gcc -y \
+ && apt autoremove -y
 
 COPY . /app
 
