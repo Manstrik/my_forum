@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static sass_tags %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'title_page/css/index.css' %}">
+  <link rel="stylesheet" href="{% sass_src 'title_page/css/index.scss' %}">
   <title>Форум</title>
 {% endblock %}
 
