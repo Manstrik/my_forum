@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  {% block head %}
-    {{ block.super }}
-    <link rel="stylesheet" href="{% static 'title_page/css/index.css' %}">
-    <title>Форум</title>
-  {% endblock %}
-</head>
-<body>
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'title_page/css/index.css' %}">
+  <title>Форум</title>
+{% endblock %}
+
 {% block body %}
   <section class="section">
     <div class="container">
@@ -30,5 +26,3 @@
 {% block js %}
   <script src="{% static 'title_page/js/index.js' %}" type="text/javascript"></script>
 {% endblock %}
-</body>
-</html>

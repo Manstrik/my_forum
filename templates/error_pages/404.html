@@ -1,18 +1,11 @@
 {# Шаблон страницы 404 #}
 {% extends 'base.html' %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  {% block head %}
-    {{ block.super }}
-    <title>Страница не найдена</title>
-  {% endblock %}
-</head>
-<body>
+
+{% block head %}
+  <title>Страница не найдена</title>
+{% endblock %}
+
 {% block body %}
-  {{ block.super }}
   <h1>Страница не найдена</h1>
   <p>Пожалуйста, вернитесь на <a href="{% url 'main' %}">главную</a>.</p>
 {% endblock %}
-</body>
-</html>
