@@ -28,5 +28,7 @@ urlpatterns = [
     path('title/', include('title_page.urls', namespace='title_page')),
 ]
 
+handler404 = 'my_forum.views.handler404'
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
