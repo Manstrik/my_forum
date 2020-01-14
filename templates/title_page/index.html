@@ -1,25 +1,23 @@
 {% extends 'base.html' %}
-{% load static sass_tags %}
+{% load static %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% sass_src 'title_page/css/index.scss' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'title_page/css/index.css' %}" type="text/css">
   <title>Форум</title>
 {% endblock %}
 
 {% block body %}
   <section class="section">
-    <div class="container">
-      <h1 class="button">
-        Здарова
-      </h1>
-      <a href="{% url 'title_page:index' %}">На главную</a>
-      <a href="{% url 'admin:index' %}">Админка</a>
-      {% for user in users %}
-        <p>{{ user.username }}</p>
-      {% empty %}
-        <div>Пользователей нет.</div>
-      {% endfor %}
-    </div>
+    <h1 class="button">
+      Здарова
+    </h1>
+    <a href="{% url 'title_page:index' %}">На главную</a>
+    <a href="{% url 'admin:index' %}">Админка</a>
+    {% for user in users %}
+      <p>{{ user.username }}</p>
+    {% empty %}
+      <div>Пользователей нет.</div>
+    {% endfor %}
   </section>
 {% endblock %}
 

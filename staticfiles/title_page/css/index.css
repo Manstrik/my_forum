@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section a {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
+}
+
+.button {
+  cursor: pointer;
+}
