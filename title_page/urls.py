@@ -9,4 +9,5 @@ app_name = 'title_page'
 urlpatterns = [
     # Главная страница приложения
     path('', Index.as_view(), name='index'),
+    path(r'user/<int:pk>/', Index.as_view(), name='user-detail')
 ]

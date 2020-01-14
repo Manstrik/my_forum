@@ -1,15 +1,16 @@
-.section {
+
+.header {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.section a {
+.header a {
   text-decoration: none;
 }
 
-@media (max-width: 600px) {
-  .section {
+@media (max-width: 768px) {
+  .header {
     flex-direction: column;
   }
 }

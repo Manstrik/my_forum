@@ -7,18 +7,28 @@
 {% endblock %}
 
 {% block body %}
-  <section class="section">
+  <header class="header">
     <h1 class="button">
       Здарова
     </h1>
     <a href="{% url 'title_page:index' %}">На главную</a>
     <a href="{% url 'admin:index' %}">Админка</a>
-    {% for user in users %}
-      <p>{{ user.username }}</p>
-    {% empty %}
-      <div>Пользователей нет.</div>
-    {% endfor %}
-  </section>
+    <ul>
+      {% for user in users %}
+        <li>
+          <a href="{% url 'title_page:user-detail' user.pk %}">
+            {% if user.username and user.last_name %}
+              {{ user.first_name }} {{ user.last_name }} ({{ user.username }})
+            {% else %}
+              {{ user.username }}
+            {% endif %}
+          </a>
+        </li>
+      {% empty %}
+        <div>Пользователей нет.</div>
+      {% endfor %}
+    </ul>
+  </header>
 {% endblock %}
 
 {% block js %}
