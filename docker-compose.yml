@@ -44,9 +44,6 @@ services:
     image: manstrik/my_forum:django
     environment:
       - PROJECT_MODE=production
-    networks:
-      - default
-      - proxy
     depends_on:
       - my_forum-postgres
 
