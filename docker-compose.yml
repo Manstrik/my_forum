@@ -41,7 +41,7 @@ services:
       - ./media:/app/media
     restart: always
     container_name: my_forum-django
-    image: manstrik/my_forum
+    image: manstrik/my_forum:django
     environment:
       - PROJECT_MODE=production
     networks:
