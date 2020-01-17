@@ -8,3 +8,11 @@ body {
   width: 75%;
   margin: 0 auto;
 }
+
+/* При работе на мобильных устройствах, выключаем мерцание элементов при кликах */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
