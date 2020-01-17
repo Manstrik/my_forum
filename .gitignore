@@ -132,3 +132,8 @@ dmypy.json
 
 .idea
 static
+/my_forum/secret_key.py
+/my_forum/pss.py
+/my_forum/pss_db.py
+/my_forum/pss_db.py
+/templates/learning_JS/
