@@ -15,7 +15,7 @@
     <a href="{% url 'admin:index' %}">Админка</a>
     <ul>
       {% for user in users %}
-        <li>
+        <li class="user">
           <a href="{% url 'title_page:user-detail' user.pk %}">
             {% if user.username and user.last_name %}
               {{ user.first_name }} {{ user.last_name }} ({{ user.username }})

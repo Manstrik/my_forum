@@ -1,4 +1,4 @@
-
+/* Заголовок страницы */
 .header {
   display: flex;
   justify-content: space-around;
@@ -12,6 +12,20 @@
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
+  }
+
+  .header a {
+    padding-bottom: 2em;
+  }
+}
+
+li.user {
+  padding-bottom: .5em;
+}
+
+@media (max-width: 768px) {
+  li.user {
+    padding-bottom: 1em;
   }
 }
 
