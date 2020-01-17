@@ -1,11 +1,15 @@
 {# Шаблон страницы 404 #}
 {% extends 'base.html' %}
+{% load static %}
 
 {% block head %}
+  <link rel="stylesheet" href="{% static 'error_pages/404.css' %}" type="text/css">
   <title>Страница не найдена</title>
 {% endblock %}
 
 {% block body %}
-  <h1>Страница не найдена</h1>
-  <p>Пожалуйста, вернитесь на <a href="{% url 'main' %}">главную</a>.</p>
+  <section>
+    <h1>Страница не найдена</h1>
+    <p>Пожалуйста, вернитесь на <a href="{% url 'main' %}">главную</a>.</p>
+  </section>
 {% endblock %}
