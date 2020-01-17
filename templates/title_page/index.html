@@ -13,7 +13,7 @@
     </h1>
     <a href="{% url 'title_page:index' %}">На главную</a>
     <a href="{% url 'admin:index' %}">Админка</a>
-    <ul>
+    <ul class="users">
       {% for user in users %}
         <li class="user">
           <a href="{% url 'title_page:user-detail' user.pk %}">

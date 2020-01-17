@@ -24,8 +24,14 @@ li.user {
 }
 
 @media (max-width: 768px) {
+  ul.users {
+    padding: 0;
+  }
+
   li.user {
     padding-bottom: 1em;
+    text-align: center;
+    list-style: none;
   }
 }
 
