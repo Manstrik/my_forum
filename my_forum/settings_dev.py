@@ -21,7 +21,8 @@ DATABASES['default'] = {
 }
 
 # Настройки БД для Коли
-if platform.system() == 'Windows' and os.getlogin() == 'Nikolay':
+if (platform.system() == 'Windows' and os.getlogin() == 'Nikolay') \
+        or (platform.system() == 'Linux' and os.getlogin() == 'nikolay'):
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
