@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic.base import RedirectView
 
+from .paths import CREATE_TOPIC
 from .paths import TITLE_PAGE
 
 urlpatterns = [
@@ -29,7 +30,7 @@ urlpatterns = [
     # Приложение title_page
     path(TITLE_PAGE, include('title_page.urls', namespace='title_page')),
     # Создание темы на форуме
-    path('create_topic/', include('create_topic.urls'))
+    path(CREATE_TOPIC, include('create_topic.urls', namespace='create_topic'))
 ]
 
 handler404 = 'my_forum.views.handler404'
