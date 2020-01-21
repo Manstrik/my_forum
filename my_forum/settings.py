@@ -78,12 +78,10 @@ WSGI_APPLICATION = 'my_forum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'my_forum',
-        'USER': 'vladislav',
-        'PASSWORD': pss_db(),
-        'HOST': '127.0.0.1',
-        'PORT': '5432'  # порт/ip должен соответствовать порту, на котором "слушает" СУБД
-        # это не настройка Django - это настройка PostreSQL и менять её надо там
+        'NAME': 'test',
+        'USER': 'test',
+        'PASSWORD': 'test',
+        'HOST': 'my_forum-postgres',
     }
 }
 
