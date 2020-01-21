@@ -28,6 +28,8 @@ urlpatterns = [
     path('', RedirectView.as_view(url=TITLE_PAGE), name='main'),
     # Приложение title_page
     path(TITLE_PAGE, include('title_page.urls', namespace='title_page')),
+    # Создание темы на форуме
+    path('create_topic/', include('create_topic.urls'))
 ]
 
 handler404 = 'my_forum.views.handler404'
