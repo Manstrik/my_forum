@@ -14,13 +14,18 @@
 
 /* Контейнер с постом */
 .post {
+  /* Размещаем по 2 поста в строчку */
   flex: 0 40%;
   display: flex;
+  align-items: center;
   margin-bottom: 2em;
   margin-left: 2em;
   transition: all 0.3s ease;
   cursor: pointer;
   background-color: aliceblue;
+  /* Убираем стандартные параметры ссылки */
+  text-decoration: none;
+  color: black;
 }
 
 .post:hover {
@@ -35,7 +40,13 @@
 }
 
 .post img {
-  max-height: 200px;
+  max-height: 150px;
+  height: 100%;
+  width: auto;
+}
+
+.post-text {
+  width: 100%;
 }
 
 .post-text h2 {

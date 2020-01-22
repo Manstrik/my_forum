@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'title_page/css/index.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'title_page/css/posts.css' %}" type="text/css">
   <title>Форум</title>
 {% endblock %}
 
 {% block body %}
   <section class="section">
     {% for post in posts %}
-      <div class="post">
+      <a class="post" href="{% url 'title_page:post-detail' post.pk %}">
 
         <img src="{{ post.preview_image.url }}" alt="">
 
@@ -18,7 +18,7 @@
           <p>{{ post.summary }}</p>
         </div>
 
-      </div>
+      </a>
     {% empty %}
       <h1>Постов не найдено.</h1>
     {% endfor %}

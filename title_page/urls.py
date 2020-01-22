@@ -2,12 +2,12 @@
 
 from django.urls import path
 
-from title_page.views import IndexView
+from title_page.views import PostList
 
 app_name = 'title_page'
 
 urlpatterns = [
     # Главная страница приложения
-    path('', IndexView.as_view(), name='index'),
-    path(r'user/<int:pk>/', IndexView.as_view(), name='user-detail')
+    path('', PostList.as_view(), name='index'),
+    path(r'post/<int:pk>/', PostList.as_view(), name='post-detail')
 ]

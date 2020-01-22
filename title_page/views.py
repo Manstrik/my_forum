@@ -5,9 +5,9 @@ from django.views.generic import ListView
 from title_page.models import Post
 
 
-class IndexView(ListView):
+class PostList(ListView):
     """Класс-представление основной страницы приложения title_page."""
 
-    template_name = 'title_page/index.html'
+    template_name = 'title_page/posts.html'
     model = Post
     context_object_name = 'posts'
