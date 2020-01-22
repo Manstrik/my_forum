@@ -10,8 +10,11 @@
   <section class="section">
     {% for post in posts %}
       <a class="post" href="{% url 'title_page:post-detail' post.pk %}">
-
-        <img src="{{ post.preview_image.url }}" alt="">
+        {% if post.preview_image %}
+          <img src="{{ post.preview_image.url }}" alt="">
+        {% else %}
+          <img src="{% static 'title_page/img/default-post-image.png' %}" alt="">
+        {% endif %}
 
         <div class="post-text">
           <h2>{{ post.title }}</h2>
