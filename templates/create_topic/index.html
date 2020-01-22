@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
 {% load static %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% block head %}
+    <link rel="stylesheet" href="{% static 'create_topic/css/index.css' %}" type="text/css">
     <title>Создать тему</title>
-</head>
-<body>
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+    <table class="main_table">
+        <tr>
+            <th>Новая тема</th>
+        </tr>
+        <tr>
+            <td>
+                <form>
+                    {% csrf_token %}
+                    <input type="text" name="text_field">
+                    <input type="submit" value="создать пост">
+                </form>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

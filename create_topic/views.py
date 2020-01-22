@@ -3,6 +3,8 @@
 from django.contrib.auth.models import User
 from django.views.generic import ListView
 
+from .models import CreatePost
+
 
 class Index(ListView):
     """Класс-представление основной страницы приложения create_topic."""
@@ -10,3 +12,15 @@ class Index(ListView):
     template_name = 'create_topic/index.html'
     model = User
     context_object_name = 'users'
+
+
+def create_post(request):
+    text_field = None
+    if request.method == 'POST':
+        if 'text_field' in request.POST:
+            text_field = request.POST['text_field']  # записываем значение в переменную без браузера
+    elif request.method == 'GET':  # присваиваем значение в строке браузера/переменной
+        text_field = request.GET['text_field']
+    if text_field is not None:
+        create = CreatePost(new_post=str('text_field'))
+        create.save()

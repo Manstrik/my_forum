@@ -2,12 +2,12 @@
 
 from django.urls import path
 
-from create_topic.views import Index
+from .views import Index
 
 app_name = 'create_topic'
 
 urlpatterns = [
     # Главная страница приложения
     path('', Index.as_view(), name='index'),
-    path(r'user/<int:pk>/', Index.as_view(), name='user-detail')
+    path(r'user/<int:pk>/', Index.as_view(), name='user-detail'),
 ]
