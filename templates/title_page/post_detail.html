@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'title_page/css/post_detail.css' %}" type="text/css">
+  <title>Форум | {{ post.title }}</title>
+{% endblock %}
+
+{% block body %}
+  <p>
+    {{ post.summary }}
+  </p>
+{% endblock %}

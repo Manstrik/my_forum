@@ -16,6 +16,6 @@ class PostList(ListView):
 class PostDetail(DetailView):
     """Класс-представление страницы с детальной информацией о посте приложения title_page."""
 
-    template_name = 'title_page/post_list.html'
+    template_name = 'title_page/post_detail.html'
     model = Post
     context_object_name = 'post'
