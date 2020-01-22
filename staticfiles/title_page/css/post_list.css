@@ -33,12 +33,15 @@
   max-height: 150px;
   height: 100%;
   width: auto;
+  margin: 1em;
 }
 
 @media (max-width: 1024px) {
   .post {
     margin-bottom: 5em;
     flex: 100%;
+    flex-direction: column;
+    margin-left: 0;
   }
 }
 

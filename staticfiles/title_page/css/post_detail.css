@@ -15,7 +15,7 @@
 }
 
 .content {
-  text-indent: 2em;
+  text-indent: 1em;
   font-size: 1.2rem;
   overflow: auto;
   text-align: justify;
@@ -26,12 +26,22 @@
   max-width: 400px;
   width: 100%;
   height: auto;
-  margin-left: 1em;
 }
 
 @media (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .content img {
-    margin-bottom: 1em;
+    float: none;
+    max-width: 200px;
+  }
+
+  .content span {
+    align-self: flex-start;
   }
 }
 

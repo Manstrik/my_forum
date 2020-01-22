@@ -1,5 +1,4 @@
 """Представления для приложения title_page."""
-
 from django.views.generic import DetailView, ListView
 
 from title_page.models import Post
