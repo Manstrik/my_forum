@@ -19,18 +19,15 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic.base import RedirectView
 
-from .paths import CREATE_TOPIC
-from .paths import TITLE_PAGE
-
 urlpatterns = [
     # Админка сайта
     path('admin/', admin.site.urls),
     # Раздел редиректа
-    path('', RedirectView.as_view(url=TITLE_PAGE), name='main'),
+    path('', RedirectView.as_view(url='title_page/'), name='index'),
     # Приложение title_page
-    path(TITLE_PAGE, include('title_page.urls', namespace='title_page')),
+    path('title_page/', include('title_page.urls', namespace='title_page')),
     # Создание темы на форуме
-    path(CREATE_TOPIC, include('create_topic.urls', namespace='create_topic'))
+    path('create_topic/', include('create_topic.urls', namespace='create_topic'))
 ]
 
 handler404 = 'my_forum.views.handler404'
