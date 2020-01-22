@@ -3,6 +3,7 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'title_page/css/post_detail.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'arrows.css' %}" type="text/css">
   <title>Форум | {{ post.title }}</title>
 {% endblock %}
 
@@ -22,6 +23,11 @@
     <p class="credits">
       {{ post.added_date }}, {{ post.created_by.username }}
     </p>
+
+    <a class="go-back" href="{% url 'title_page:post-list' %}">
+      <div class="arrow left"></div>
+      К постам
+    </a>
 
   </section>
 {% endblock %}

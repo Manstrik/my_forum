@@ -15,6 +15,11 @@ class Index(ListView):
 
 
 def create_post(request):
+    """
+    Функция для создания поста.
+
+    :param request: обхект запроса
+    """
     text_field = None
     if request.method == 'POST':
         if 'text_field' in request.POST:
