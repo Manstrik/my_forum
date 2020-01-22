@@ -13,3 +13,7 @@ class Post(models.Model):
     added_date = models.DateTimeField('Дата добавления поста', auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Кто добавил пост')
     preview_image = models.ImageField('Картинка на посте', upload_to='post-images', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'
