@@ -1,3 +1,5 @@
+"""Конфигурационный файл приложения create_topic."""
+
 from django.apps import AppConfig
 
 

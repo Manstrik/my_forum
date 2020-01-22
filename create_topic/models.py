@@ -1,1 +1,1 @@
-# Create your models here.
+"""Модели приложения create_topic."""

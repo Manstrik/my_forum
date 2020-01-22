@@ -1,1 +1,1 @@
-# Create your tests here.
+"""Тесты для приложения create_topic."""
