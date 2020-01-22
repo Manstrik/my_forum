@@ -9,5 +9,15 @@
 {% block body %}
   <section class="section">
     <h1>{{ post.title }}</h1>
+
+    <p class="content">
+      <img src="{{ post.preview_image.url }}" alt="">
+      {{ post.content }}
+    </p>
+
+    <p class="credits">
+      {{ post.added_date }}, {{ post.created_by.username }}
+    </p>
+
   </section>
 {% endblock %}

@@ -1,0 +1,41 @@
+.section {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.section h1 {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    width: 90%;
+  }
+}
+
+.content {
+  text-indent: 2em;
+  font-size: 1.2rem;
+  overflow: auto;
+  text-align: justify;
+}
+
+.content img {
+  float: right;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin-left: 1em;
+}
+
+@media (max-width: 768px) {
+  .content img {
+    margin-bottom: 1em;
+  }
+}
+
+.credits {
+  position: absolute;
+  right: 1em;
+}
