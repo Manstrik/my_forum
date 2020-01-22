@@ -27,6 +27,7 @@
   /* Убираем стандартные параметры ссылки */
   text-decoration: none;
   color: black;
+  outline: none;
 }
 
 .post:hover {

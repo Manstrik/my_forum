@@ -18,9 +18,9 @@
           <p>{{ post.summary }}</p>
         </div>
 
-        <span class="created-date">
-          {{ post.added_date }}
-        </span>
+        <div class="created-date">
+          {{ post.added_date }}, {{ post.created_by.username }}
+        </div>
 
       </a>
     {% empty %}
