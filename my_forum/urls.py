@@ -23,9 +23,9 @@ urlpatterns = [
     # Админка сайта
     path('admin/', admin.site.urls),
     # Раздел редиректа
-    path('', RedirectView.as_view(url='title_page/'), name='index'),
-    # Приложение title_page
-    path('title_page/', include('title_page.urls', namespace='title_page')),
+    path('', RedirectView.as_view(url='posts/'), name='index'),
+    # Приложение posts_app
+    path('posts/', include('posts_app.urls', namespace='posts_app')),
     # Создание темы на форуме
     path('create_topic/', include('create_topic.urls', namespace='create_topic'))
 ]

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'title_page/css/post_detail.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'posts_app/css/post_detail.css' %}" type="text/css">
   <link rel="stylesheet" href="{% static 'arrows.css' %}" type="text/css">
   <title>Форум | {{ post.title }}</title>
 {% endblock %}
@@ -15,7 +15,7 @@
       {% if post.preview_image %}
         <img src="{{ post.preview_image.url }}" alt="">
       {% else %}
-        <img src="{% static 'title_page/img/default-post-image.png' %}" alt="">
+        <img src="{% static 'posts_app/img/default-post-image.png' %}" alt="">
       {% endif %}
       <span>{{ post.content }}</span>
     </p>
@@ -24,7 +24,7 @@
       {{ post.added_date }}, {{ post.created_by.username }}
     </p>
 
-    <a class="go-back" href="{% url 'title_page:post-list' %}">
+    <a class="go-back" href="{% url 'posts_app:post-list' %}">
       <div class="arrow left"></div>
       К постам
     </a>

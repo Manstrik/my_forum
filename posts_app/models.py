@@ -1,9 +1,9 @@
-"""Модели приложения title_page."""
+"""Модели приложения posts_app."""
 
 from django.contrib.auth.models import User
 from django.db import models
 
-from title_page.utils import get_post_image_upload_path
+from posts_app.utils import get_post_image_upload_path
 
 
 class Post(models.Model):

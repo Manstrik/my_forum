@@ -2,19 +2,19 @@
 
 from django.db import migrations, models
 
-import title_page.utils
+import posts_app.utils
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('title_page', '0003_auto_20200122_1056'),
+        ('posts_app', '0003_auto_20200122_1056'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='post',
             name='preview_image',
-            field=models.ImageField(blank=True, null=True, upload_to=title_page.utils.get_post_image_upload_path,
+            field=models.ImageField(blank=True, null=True, upload_to=posts_app.utils.get_post_image_upload_path,
                                     verbose_name='Картинка на посте'),
         ),
     ]

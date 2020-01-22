@@ -5,7 +5,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('title_page', '0002_post_preview_image'),
+        ('posts_app', '0002_post_preview_image'),
     ]
 
     operations = [
