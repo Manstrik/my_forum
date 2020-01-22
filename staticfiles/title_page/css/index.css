@@ -1,41 +1,49 @@
-/* Заголовок страницы */
-.header {
+/* Основная секция с постами */
+.section {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  padding: 2em;
+  justify-content: space-evenly;
 }
 
-.header a {
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-  }
-
-  .header a {
-    padding-bottom: 2em;
+@media (max-width: 1024px) {
+  .section {
+    justify-content: space-evenly;
   }
 }
 
-/* Список пользователей */
-li.user {
-  padding-bottom: .5em;
-}
-
-@media (max-width: 768px) {
-  ul.users {
-    padding: 0;
-  }
-
-  li.user {
-    padding-bottom: 1em;
-    text-align: center;
-    list-style: none;
-  }
-}
-
-.button {
+/* Контейнер с постом */
+.post {
+  flex: 0 40%;
+  display: flex;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  transition: all 0.3s ease;
   cursor: pointer;
+  background-color: aliceblue;
+}
+
+.post:hover {
+  transform: translateY(-1em);
+  box-shadow: 0.5em 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .post {
+    margin-bottom: 5em;
+  }
+}
+
+.post img {
+  max-height: 200px;
+}
+
+.post-text h2 {
+  text-align: center;
+}
+
+.post-text p {
+  text-indent: 1.5em;
+  text-align: justify;
+  padding: 1em;
 }

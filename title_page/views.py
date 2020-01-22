@@ -1,12 +1,13 @@
 """Представления для приложения title_page."""
 
-from django.contrib.auth.models import User
 from django.views.generic import ListView
+
+from title_page.models import Post
 
 
 class IndexView(ListView):
     """Класс-представление основной страницы приложения title_page."""
 
     template_name = 'title_page/index.html'
-    model = User
-    context_object_name = 'users'
+    model = Post
+    context_object_name = 'posts'

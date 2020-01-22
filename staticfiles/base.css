@@ -1,7 +1,6 @@
 body {
   font-size: 16px;
   margin: 0;
-  background-color: darkgray;
 }
 
 .container {
@@ -10,7 +9,7 @@ body {
 }
 
 /* При работе на мобильных устройствах, выключаем мерцание элементов при кликах */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
