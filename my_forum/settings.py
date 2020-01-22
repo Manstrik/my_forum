@@ -112,7 +112,8 @@ TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
-USE_L10N = True
+# Ставим в False, чтобы вручную задать ниже формат даты
+USE_L10N = False
 
 USE_TZ = True
 
@@ -130,6 +131,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Настройки SSL
 SECURE_PROXY_SSL_HEADER = ('SCHEME', 'https')
+
+# Задаем форматы даты и даты с временем
+DATE_FORMAT = 'd.m.Y г.'
+
+DATETIME_FORMAT = f'{DATE_FORMAT} H:i'
 
 # Настройки для dev-режима
 if os.getenv('PROJECT_MODE') != 'production':
