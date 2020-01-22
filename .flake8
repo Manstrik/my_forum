@@ -1,5 +1,5 @@
 [flake8]
 exclude = .git, __pycache__, migrations ,fixtures, wsgi.py, env, venv, .idea, manage.py, settings.py,
-          urls.py, managers.py, __init__.py, settings_dev.py
+          urls.py, managers.py, __init__.py, settings_dev.py, pss*.py, secret_key.py
 max-line-length = 120
 ignore: A003, D106, D104, D105, F401, I100, I201
