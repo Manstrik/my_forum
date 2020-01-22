@@ -14,6 +14,7 @@
 
 /* Контейнер с постом */
 .post {
+  position: relative;
   /* Размещаем по 2 поста в строчку */
   flex: 0 40%;
   display: flex;
@@ -33,20 +34,21 @@
   box-shadow: 0.5em 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1024px) {
-  .post {
-    margin-bottom: 5em;
-  }
-}
-
 .post img {
   max-height: 150px;
   height: 100%;
   width: auto;
 }
 
+@media (max-width: 1024px) {
+  .post {
+    margin-bottom: 5em;
+  }
+}
+
 .post-text {
   width: 100%;
+  padding-bottom: 2em;
 }
 
 .post-text h2 {
@@ -57,4 +59,11 @@
   text-indent: 1.5em;
   text-align: justify;
   padding: 1em;
+}
+
+.created-date {
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
 }
