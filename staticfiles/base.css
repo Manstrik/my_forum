@@ -1,6 +1,16 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   font-size: 16px;
   margin: 0;
+  animation: 1s ease 0s 1 fadeIn;
 }
 
 h1 {
@@ -11,20 +21,10 @@ h2 {
   font-size: 24px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .container {
   width: 90%;
   max-width: 1280px;
   margin: 0 auto;
-  animation: 1s ease 0s 1 fadeIn;
 }
 
 /* При работе на мобильных устройствах, выключаем мерцание элементов при кликах */

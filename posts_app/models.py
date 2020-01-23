@@ -19,6 +19,8 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
+        # Имя таблицы для этой модели
+        db_table = 'Ууууу сука, таблица'
 
     def __str__(self):
         return self.title
