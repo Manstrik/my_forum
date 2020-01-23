@@ -1,6 +1,7 @@
 """Представления для приложения create_topic."""
 
 from django.contrib.auth.models import User
+from django.http.response import HttpResponse
 from django.views.generic import ListView
 
 from .models import CreatePost
@@ -29,3 +30,4 @@ def create_post(request):
     if text_field is not None:
         create = CreatePost(new_post=str('text_field'))
         create.save()
+    return HttpResponse('Добавлено!')
