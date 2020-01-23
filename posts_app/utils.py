@@ -1,6 +1,20 @@
-"""Файл жополнительных утилит приложения posts_app."""
+"""Файл дополнительных утилит приложения posts_app."""
 
 import os
+
+TRASH_KEYS = ['csrfmiddlewaretoken']
+
+
+def multipart_to_dict(multi_part_data):
+    """
+    Функция конвертации объекта вида multi-part в словарь.
+
+    :param multi_part_data: объект для конвертации
+    :return: преобразованный словарь
+    """
+    data = {key: value for key, value in multi_part_data.items() if key not in TRASH_KEYS}
+
+    return data
 
 
 def get_post_image_upload_path(instance, filename):

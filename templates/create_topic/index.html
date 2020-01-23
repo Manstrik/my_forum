@@ -1,23 +1,24 @@
+{% extends 'base.html' %}
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'create_topic/css/index.css' %}" type="text/css">
-    <title>Создать тему</title>
+  <link rel="stylesheet" href="{% static 'create_topic/css/index.css' %}" type="text/css">
+  <title>Создать тему</title>
 {% endblock %}
 
 {% block body %}
-    <table class="main_table">
-        <tr>
-            <th>Новая тема</th>
-        </tr>
-        <tr>
-            <td>
-                <form action="{% url 'create_topic:create_post' %}">
-                    {% csrf_token %}
-                    <input type="text" name="text_field">
-                    <input type="submit" value="создать пост">
-                </form>
-            </td>
-        </tr>
-    </table>
+  <table class="main_table">
+    <tr>
+      <th>Новая тема</th>
+    </tr>
+    <tr>
+      <td>
+        <form action="{% url 'create_topic:create_post' %}">
+          {% csrf_token %}
+          <input type="text" name="text_field">
+          <input type="submit" value="создать пост">
+        </form>
+      </td>
+    </tr>
+  </table>
 {% endblock %}

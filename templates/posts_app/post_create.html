@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+  <form method="post" action="{% url 'posts_app:create' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p>
+      <label for="title">Заголовок</label>
+      <input id="title" type="text" name="title" required>
+    </p>
+
+    <p>
+      <label for="summary">Текст предпросмотра</label>
+      <input id="summary" type="text" name="summary" required>
+    </p>
+
+    <p>
+      <label for="content">Текст статьи</label>
+      <input id="content" type="text" name="content" required>
+    </p>
+
+    <p>
+      <label for="preview_image">Изображение в статье</label>
+      <input id="preview_image" type="file" name="preview_image">
+    </p>
+
+    <input type="submit" value="Отправить">
+  </form>
+{% endblock %}
