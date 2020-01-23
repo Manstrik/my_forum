@@ -30,8 +30,11 @@ def create_post(request):
     :return: редирект на страницу с постами
     """
     data = multipart_to_dict(request.POST)
-    files = request.FILES
 
-    Post.objects.create(**data, created_by=request.user, preview_image=files['preview_image'])
+    data['preview_image'] = request.FILES.get('preview_image', None)
+
+    data['created_by'] = request.user
+
+    Post.objects.create(**data)
 
     return redirect('posts_app:post-list')
