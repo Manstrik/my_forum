@@ -29,5 +29,11 @@
     {% empty %}
       <h1>Постов не найдено.</h1>
     {% endfor %}
+
+    {# Только авторизированые пользователи могут добавлять посты #}
+    {% if user.is_authenticated %}
+      <a href="{% url 'posts_app:new-post' %}" class="create-post">Создать пост +</a>
+    {% endif %}
+
   </section>
 {% endblock %}
