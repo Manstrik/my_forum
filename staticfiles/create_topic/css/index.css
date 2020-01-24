@@ -25,11 +25,16 @@ th {
     text-align: right;
 }
 
+.test {
+    width: 490px;
+    height: 30px;
+}
+
 .head_table {
     border: 2px solid black;
 }
 
-input[type='text'] {
+.text_field {
     color: blue;
     background: white;
     outline: none;
