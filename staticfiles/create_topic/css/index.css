@@ -20,14 +20,15 @@ td {
 th {
     border: 1px solid #000000;
     height: 1px;
-    background-color: #000000;
+    background-color: #005000;
     color: white;
     text-align: right;
 }
 
-.test {
-    width: 490px;
+.topic_name {
+    width: 550px;
     height: 30px;
+    resize: none;
 }
 
 .head_table {
@@ -38,10 +39,19 @@ th {
     color: blue;
     background: white;
     outline: none;
-    width: 500px;
     height: 300px;
+    width: 600px;
+    overflow: auto;
+    resize: none;
 }
 
 input[type='submit'] {
 }
 
+.tiny-pageembed--1by1 {
+    display: block;
+    overflow: auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
