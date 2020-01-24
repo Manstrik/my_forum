@@ -28,6 +28,6 @@ def create_post(request):
     elif request.method == 'GET':  # присваиваем значение в строке браузера/переменной
         text_field = request.GET['text_field']
     if text_field is not None:
-        create = CreatePost(new_post=str('text_field'))
+        create = CreatePost(post_text=str(text_field))
         create.save()
     return HttpResponse('Добавлено!')
