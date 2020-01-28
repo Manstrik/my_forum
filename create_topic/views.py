@@ -31,8 +31,9 @@ def create_post(request):
         text_field = request.GET['text_field']
         text_post_name = request.GET['post_name']
     if text_field and text_post_name is not None:
-        create_text = CreatePost(post_text=str(text_field))
-        create_post_name = CreatePost(post_name=str(text_post_name))
+        create_text = CreatePost(post_text=str(text_field),
+                                 post_name=str(text_post_name))
         create_text.save()
-        create_post_name.save()
+        # create_post_name = CreatePost(post_name=str(text_post_name))
+        # create_post_name.save()
     return HttpResponse('Добавлено!')
