@@ -5,12 +5,9 @@
     background-color: white;
     border-collapse: collapse;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 300px;
+    margin: 2.5% auto;
+    width: 90%;
+    height: 30%;
 }
 
 td {
@@ -26,7 +23,8 @@ th {
 }
 
 .topic_name {
-    width: 550px;
+    width: 98%;
+    transform: translate(-1%);
     height: 30px;
     resize: none;
 }
@@ -54,4 +52,12 @@ input[type='submit'] {
     padding: 0;
     position: relative;
     width: 100%;
+}
+
+.post {
+    top: 500px;
+    /*как сделать чтобы отступ был от конца предыдущего блока и
+                   чтобы всё было в процентах т.к. разрешение у всех разное и это более универсально*/
+    left: 50%;
+    position: relative;
 }

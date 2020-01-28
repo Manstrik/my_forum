@@ -35,4 +35,18 @@
             </tr>
         </table>
     </form>
+
+    <section class="post">
+        <h1>
+            something111 {% comment %}а вот это видно?{% endcomment %}
+        </h1>
+    </section>
+{% endblock %}
+
+{% block posts %}
+    <section class="post">
+        <h1>
+            something111 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
+        </h1>
+    </section>
 {% endblock %}
