@@ -4,7 +4,7 @@
     border: 3px solid black;
     background-color: white;
     border-collapse: collapse;
-    position: absolute;
+    position: relative;
     margin: 2.5% auto;
     width: 90%;
     height: 30%;
@@ -55,9 +55,9 @@ input[type='submit'] {
 }
 
 .post {
-    top: 500px;
+    position: absolute;
+    top: 80%;
     /*как сделать чтобы отступ был от конца предыдущего блока и
                    чтобы всё было в процентах т.к. разрешение у всех разное и это более универсально*/
     left: 50%;
-    position: relative;
 }
