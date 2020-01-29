@@ -37,16 +37,36 @@
     </form>
 
     <section class="post">
-        <h1>
-            something111 {% comment %}а вот это видно?{% endcomment %}
-        </h1>
+        <div class="post-user_name">
+            <h1 class="post-user_name">
+                user_name
+            </h1>
+        </div>
+        {#        <div class="post-user_icon">#}
+        {#            <a>#}
+        {#                <img src="{% static 'posts_app/img/default-post-image.png' %}" alt="">#}
+        {#            </a>#}
+        {#        </div>#}
+        <div class="created-topic_name">
+            <h2>
+                Topic_name
+            </h2>
+        </div>
+        <div class="created-post_text">
+            <h3>
+                сама тема
+            </h3>
+        </div>
+        <div class="created-date_post">
+            дата и время создания
+        </div>
     </section>
 {% endblock %}
 
 {% block posts %}
     <section class="post">
-        <h1>
-            something111 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
-        </h1>
+        <h2>
+            something222 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
+        </h2>
     </section>
 {% endblock %}

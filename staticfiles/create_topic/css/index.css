@@ -4,6 +4,7 @@
     border: 3px solid black;
     background-color: white;
     border-collapse: collapse;
+    align-items: center;
     position: relative;
     margin: 2.5% auto;
     width: 90%;
@@ -46,18 +47,46 @@ th {
 input[type='submit'] {
 }
 
-.tiny-pageembed--1by1 {
-    display: block;
-    overflow: auto;
-    padding: 0;
-    position: relative;
-    width: 100%;
-}
-
 .post {
-    position: absolute;
-    top: 80%;
+    position: relative;
     /*как сделать чтобы отступ был от конца предыдущего блока и
                    чтобы всё было в процентах т.к. разрешение у всех разное и это более универсально*/
+    display: flex;
+    /*центрирование*/
     left: 50%;
+    transform: translate(-50%, 0);
+    align-items: center;
+    background-color: rgba(77, 134, 144, 0.64);
+    flex-direction: row; /*направление объектов*/
+    margin-bottom: 20px; /* отступ снизу для пустого пространства*/
+    outline: none;
+    padding: 30px;
+}
+
+.created-topic_name {
+    text-align: center;
+}
+
+.created-post_text {
+    position: relative;
+}
+
+.post-user_name {
+    position: inherit;
+    top: 2.5%;
+    left: 1.5%;
+}
+
+.post-user_name h1 {
+    font-size: 100%;
+}
+
+.post-user_icon {
+    position: inherit;
+}
+
+.created-date_post {
+    position: inherit;
+    top: 2.5%;
+    right: 1.5%;
 }
