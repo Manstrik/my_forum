@@ -37,28 +37,22 @@
     </form>
 
     <section class="post">
-        <div class="post-user_name">
-            <h1 class="post-user_name">
-                user_name
-            </h1>
-        </div>
-        {#        <div class="post-user_icon">#}
-        {#            <a>#}
-        {#                <img src="{% static 'posts_app/img/default-post-image.png' %}" alt="">#}
-        {#            </a>#}
-        {#        </div>#}
-        <div class="created-topic_name">
-            <h2>
-                Topic_name
-            </h2>
-        </div>
-        <div class="created-post_text">
-            <h3>
-                сама тема
-            </h3>
-        </div>
-        <div class="created-date_post">
-            дата и время создания
+        <div class="post-inside_head">
+            <div class="post-item">
+                <h1>
+                    user_name
+                </h1>
+            </div>
+            <div class="post-item">
+                <h2>
+                    Topic_name
+                </h2>
+            </div>
+            <div class="post-item">
+                <h3>
+                    сама тема
+                </h3>
+            </div>
         </div>
     </section>
 {% endblock %}

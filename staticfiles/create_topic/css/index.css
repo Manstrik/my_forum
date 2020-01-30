@@ -55,38 +55,32 @@ input[type='submit'] {
     /*центрирование*/
     left: 50%;
     transform: translate(-50%, 0);
-    align-items: center;
     background-color: rgba(77, 134, 144, 0.64);
-    flex-direction: row; /*направление объектов*/
     margin-bottom: 20px; /* отступ снизу для пустого пространства*/
-    outline: none;
-    padding: 30px;
 }
 
-.created-topic_name {
-    text-align: center;
-}
-
-.created-post_text {
-    position: relative;
-}
-
-.post-user_name {
-    position: inherit;
+.post-inside_head {
+    padding: 5px;
+    width: 300px;
     top: 2.5%;
     left: 1.5%;
 }
 
-.post-user_name h1 {
-    font-size: 100%;
+.post-item {
+    background: #2e5b61;
+    font-size: 2.5rem;
+    color: #eee;
+    margin: 5px;
+    padding: 15px;
 }
 
-.post-user_icon {
-    position: inherit;
-}
+/*.post-inside_head h2 {*/
+/*}*/
+/*.post-inside_head h3 {*/
+/*}*/
+
 
 .created-date_post {
-    position: inherit;
     top: 2.5%;
     right: 1.5%;
 }
