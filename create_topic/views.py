@@ -2,6 +2,7 @@
 
 from django.contrib.auth.models import User
 from django.http.response import HttpResponse
+from django.shortcuts import render
 from django.views.generic import ListView
 
 from .models import CreatePost
@@ -34,3 +35,8 @@ def create_post(request):
                                  post_name=str(text_post_name))
         create_text.save()
     return HttpResponse('Добавлено!')
+
+
+def loading_postdb(request):
+    posts = CreatePost.objects.all()  # загружаем все данные из БД
+    return render(request, 'create_topic/index.html', locals())  # передаём их в html

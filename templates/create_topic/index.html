@@ -37,23 +37,25 @@
     </form>
 
     <section class="post">
+    {% for i in posts %}
         <div class="post-inside_head">
             <div class="post-item">
                 <h1>
-                    user_name
+                    {{ i.post_user_name }}
                 </h1>
             </div>
             <div class="post-item">
                 <h2>
-                    Topic_name
+                    {{ i.post_name }}
                 </h2>
             </div>
             <div class="post-item">
                 <h3>
-                    сама тема
+                    {{ i.post_text }}
                 </h3>
             </div>
         </div>
+    {% endfor %}
     </section>
 {% endblock %}
 
