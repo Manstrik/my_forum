@@ -1,6 +1,5 @@
 """Представления для приложения create_topic."""
 
-from django.contrib.auth.models import User
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
@@ -12,13 +11,18 @@ class Index(ListView):
     """Класс-представление основной страницы приложения create_topic."""
 
     template_name = 'create_topic/index.html'
-    model = User
-    context_object_name = 'users'
+    # Ты передавал неправильную модель в шаблон (скопировал ранее у меня видимо)
+    # model = User
+    model = CreatePost
+    # Аналогично с именем, под которым тебе передается в шаблон
+    # context_object_name = 'users'
+    context_object_name = 'posts'
 
 
 def create_post(request):
     """
     Функция для создания поста.
+
     :param request: обхект запроса
     """
     text_field = None
@@ -38,5 +42,11 @@ def create_post(request):
 
 
 def loading_postdb(request):
+    """
+    Здесь должен быть комментарий.
+
+    :param request:
+    :return:
+    """
     posts = CreatePost.objects.all()  # загружаем все данные из БД
     return render(request, 'create_topic/index.html', locals())  # передаём их в html

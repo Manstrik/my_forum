@@ -3,9 +3,9 @@
 from django.db import models
 
 
-
 class CreatePost(models.Model):
     """Модель нового поста на форуме."""
+
     post_user_name = models.CharField(verbose_name='Имя пользователя', default='Не задано имя', max_length=128)
     # нужно будет изменить, когда будет сделана регистрация
     post_name = models.CharField(verbose_name='Тема поста', default='Не задано имя поста', max_length=128)
