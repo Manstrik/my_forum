@@ -10,6 +10,15 @@
             selector: '#my_field',
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $('text_area').submit(function (e) {
+                var content = tinymce.get('posted_text').getContent();
+                $('text_area').html(content)
+            })
+        })
+    </script>
+
     <title>Создать тему</title>
 {% endblock %}
 
@@ -30,33 +39,35 @@
                         <textarea class="text_field" id="my_field" name="text_field"></textarea>
                     </label>
                     {% comment %}<input class="text_field" type="text" name="text_field">{% endcomment %}
-                    <input type="submit" value="создать пост">
+                    <input onclick="get_the_textarea()" type="submit" value="создать пост">
                 </td>
             </tr>
         </table>
     </form>
 
-    <section class="post">
     {% for i in posts %}
-        <div class="post-inside_head">
-            <div class="post-item">
-                <h1>
-                    {{ i.post_user_name }}
-                </h1>
+        <section class="post">
+            <div class="post-inside_head">
+                <div class="post-item">
+                    <h1>
+                        {{ i.post_time }}
+                    </h1>
+                    <h1>
+                        {{ i.post_name }}
+                    </h1>
+                </div>
+                <div class="post-item">
+                    <h1>
+                        <img src="{% static 'posts_app/img/default-post-image.png' %}" alt="">
+                        {{ i.post_user_name }}
+                    </h1>
+                    <h3 class="text_area" onload="get_the_textarea()" id="posted_text">
+                        {{ i.post_text }}
+                    </h3>
+                </div>
             </div>
-            <div class="post-item">
-                <h2>
-                    {{ i.post_name }}
-                </h2>
-            </div>
-            <div class="post-item">
-                <h3>
-                    {{ i.post_text }}
-                </h3>
-            </div>
-        </div>
+        </section>
     {% endfor %}
-    </section>
 {% endblock %}
 
 {% block posts %}
