@@ -3,21 +3,6 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'create_topic/css/index.css' %}" type="text/css">
-    <script src="https://cdn.tiny.cloud/1/qo8mojsix8oohjrc5v81p89fah1h2cqm64jnpcj3o814kts9/tinymce/5/tinymce.min.js"
-            referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: '#my_field',
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('text_area').submit(function (e) {
-                var content = tinymce.get('posted_text').getContent();
-                $('text_area').html(content)
-            })
-        })
-    </script>
 
     <title>Создать тему</title>
 {% endblock %}
@@ -36,7 +21,13 @@
                 <td>
                     {% csrf_token %}
                     <label>
-                        <textarea class="text_field" id="my_field" name="text_field"></textarea>
+                        <textarea class="tinymce"></textarea>
+
+                        <script type="text/javascript" src="{% static 'create_topic/js/jquery.min.js' %}"></script>
+                        <script type="text/javascript"
+                                src="{% static 'create_topic/plugin/tinymce/tinymce.min.js' %}"></script>
+                        <script type="text/javascript"
+                                src="{% static 'create_topic/plugin/tinymce/init-tinymce.js' %}"></script>
                     </label>
                     {% comment %}<input class="text_field" type="text" name="text_field">{% endcomment %}
                     <input onclick="get_the_textarea()" type="submit" value="создать пост">
