@@ -27,6 +27,7 @@ def create_post(request):
     """
     text_field = None
     text_post_name = None
+    print(request.GET)
     if request.method == 'POST':  # если запрос пост, то
         if 'text_field' in request.POST:
             text_field = request.POST['text_field']  # текст поста

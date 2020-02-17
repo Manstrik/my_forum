@@ -21,7 +21,7 @@
         <td>
           {% csrf_token %}
           <label>
-            <textarea class="tinymce"></textarea>
+            <textarea class="tinymce" name="text_field"></textarea>
 
             <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
             <script type="text/javascript"
@@ -30,7 +30,7 @@
                     src="{% static 'plugin/tinymce/init-tinymce.js' %}"></script>
           </label>
           {% comment %}<input class="text_field" type="text" name="text_field">{% endcomment %}
-          <input onclick="get_the_textarea()" type="submit" value="создать пост">
+          <input type="submit" value="создать пост">
         </td>
       </tr>
     </table>
@@ -38,33 +38,36 @@
 
   {% for i in posts %}
     <section class="post">
-            <div class="post-inside_head">
-              <div class="post-item">
-                <h1>
-                  {{ i.post_time }}
-                </h1>
-                <h1>
-                  {{ i.post_name }}
-                </h1>
-              </div>
-              <div class="post-item">
-                <h1>
-                  <img src="{% static 'img/default-post-image.png' %}" alt="">
-                  {{ i.post_user_name }}
-                </h1>
-                <h3 class="text_area" onload="get_the_textarea()" id="posted_text">
-                  {{ i.post_text }}
-                </h3>
-              </div>
-            </div>
+      <div class="post-inside_head">
+        <div class="post-item">
+          <h1>
+            {{ i.post_time }}
+          </h1>
+          <h1>
+            {# Обрати внимание сюда #}
+            {{ i.post_name|safe }}
+          </h1>
+        </div>
+
+        <div class="post-item">
+          <h1>
+            <img src="{% static 'img/default-post-image.png' %}" alt="">
+            {{ i.post_user_name }}
+          </h1>
+          <h3 class="text_area" id="posted_text">
+            {# И сюда #}
+            {{ i.post_text|safe }}
+          </h3>
+        </div>
+      </div>
     </section>
   {% endfor %}
 {% endblock %}
 
 {% block posts %}
-    <section class="post">
-        <h2>
-            something222 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
-        </h2>
-    </section>
+  <section class="post">
+    <h2>
+      something222 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
+    </h2>
+  </section>
 {% endblock %}
