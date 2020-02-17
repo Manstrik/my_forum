@@ -135,4 +135,6 @@ docker-compose.yml
 Dockerfile*
 static
 media
+!create_topic/static
+!posts_app/static
 

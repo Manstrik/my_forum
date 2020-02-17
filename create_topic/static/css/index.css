@@ -1,0 +1,101 @@
+/*параметры таблицы для заполнения*/
+
+.main_table {
+    border: 3px solid black;
+    background-color: white;
+    border-collapse: collapse;
+    align-items: center;
+    position: relative;
+    margin: 2.5% auto;
+    width: 90%;
+    height: 30%;
+}
+
+td {
+    border: 1px solid #000000;
+}
+
+th {
+    border: 1px solid #000000;
+    height: 1px;
+    background-color: #005000;
+    color: white;
+    text-align: right;
+}
+
+.topic_name {
+    width: 98%;
+    transform: translate(-1%);
+    height: 30px;
+    resize: none;
+}
+
+.head_table {
+    border: 2px solid black;
+}
+
+.text_field {
+    color: blue;
+    background: white;
+    outline: none;
+    height: 300px;
+    width: 600px;
+    overflow: auto;
+    resize: none;
+}
+
+input[type='submit'] {
+}
+
+.post {
+    position: relative;
+    /*как сделать чтобы отступ был от конца предыдущего блока и
+                   чтобы всё было в процентах т.к. разрешение у всех разное и это более универсально*/
+    display: flex;
+    flex-direction: column;
+    /*центрирование*/
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(77, 134, 144, 0.64);
+    margin-bottom: 20px; /* отступ снизу для пустого пространства*/
+}
+
+.post-inside_head {
+    padding: 5px;
+    width: 300px;
+    top: 2.5%;
+    left: 1.5%;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-item h1 {
+    background: #2e5b61;
+    font-size: 2.5rem;
+    color: #eee;
+    margin: 5px;
+    padding: 1px;
+}
+
+.post-item h2 {
+    background: #2e5b61;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #eee;
+    margin: 5px;
+    padding: 1px;
+}
+
+/*.post-inside_head h2 {*/
+/*}*/
+/*.post-inside_head h3 {*/
+/*}*/
+
+
+.created-date_post {
+    top: 2.5%;
+    right: 1.5%;
+}
