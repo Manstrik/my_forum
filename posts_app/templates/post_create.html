@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Форум | Добавить пост</title>
+  <link rel="stylesheet" href="{% static 'css/post_create.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+  {% if not user.is_anonymous %}
+    <form class="form" method="post" action="{% url 'posts_app:create' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <span>
+        <label for="title">Заголовок</label>
+        <input id="title" type="text" name="title" required>
+      </span>
+
+      <span>
+        <label for="summary">Текст предпросмотра</label>
+        <input id="summary" type="text" name="summary" required>
+      </span>
+
+      <span>
+        <label for="content">Текст статьи</label>
+        <input id="content" type="text" name="content" required>
+      </span>
+
+      <span>
+        <label for="preview_image">Изображение в статье</label>
+        <input id="preview_image" type="file" name="preview_image">
+      </span>
+
+      <input type="submit" value="Отправить">
+    </form>
+  {% else %}
+    <p>Вам необходимо авторизоваться, чтобы добавлять посты.</p>
+  {% endif %}
+{% endblock %}

@@ -15,7 +15,7 @@ urlpatterns = [
     path(r'<int:pk>/', PostDetail.as_view(), name='post-detail'),
 
     # Страница с формой для создания нвого поста
-    path(r'new-post/', TemplateView.as_view(template_name='posts_app/post_create.html'), name='new-post'),
+    path(r'new-post/', TemplateView.as_view(template_name='post_create.html'), name='new-post'),
 
     # API-функция для создания поста
     path('create/', create_post, name='create')

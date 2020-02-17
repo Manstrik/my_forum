@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/post_list.css' %}" type="text/css">
+  <title>Форум</title>
+{% endblock %}
+
+{% block body %}
+  <section class="section">
+    {% for post in posts %}
+      <a class="post" href="{% url 'posts_app:post-detail' post.pk %}">
+        {% if post.preview_image %}
+          <img src="{{ post.preview_image.url }}" alt="">
+        {% else %}
+          <img src="{% static '' %}" alt="">
+        {% endif %}
+
+        <div class="post-text">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.summary }}</p>
+        </div>
+
+        <div class="created-date">
+          {{ post.added_date }}, {{ post.created_by.username }}
+        </div>
+
+      </a>
+    {% empty %}
+      <h1>Постов не найдено.</h1>
+    {% endfor %}
+
+    {# Только авторизированые пользователи могут добавлять посты #}
+    {% if user.is_authenticated %}
+      <a href="{% url 'posts_app:new-post' %}" class="create-post">Создать пост +</a>
+    {% endif %}
+
+  </section>
+{% endblock %}

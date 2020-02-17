@@ -9,7 +9,7 @@ from posts_app.utils import multipart_to_dict
 class PostList(ListView):
     """Класс-представление страницы с постами приложения posts_app."""
 
-    template_name = 'posts_app/post_list.html'
+    template_name = 'post_list.html'
     model = Post
     context_object_name = 'posts'
 
@@ -17,7 +17,7 @@ class PostList(ListView):
 class PostDetail(DetailView):
     """Класс-представление страницы с детальной информацией о посте приложения posts_app."""
 
-    template_name = 'posts_app/post_detail.html'
+    template_name = 'post_detail.html'
     model = Post
     context_object_name = 'post'
 

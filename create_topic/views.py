@@ -10,7 +10,7 @@ from .models import CreatePost
 class Index(ListView):
     """Класс-представление основной страницы приложения create_topic."""
 
-    template_name = 'create_topic/index.html'
+    template_name = 'index.html'
     # Ты передавал неправильную модель в шаблон (скопировал ранее у меня видимо)
     # model = User
     model = CreatePost
@@ -49,4 +49,4 @@ def loading_postdb(request):
     :return:
     """
     posts = CreatePost.objects.all()  # загружаем все данные из БД
-    return render(request, 'create_topic/index.html', locals())  # передаём их в html
+    return render(request, 'index.html', locals())  # передаём их в html
