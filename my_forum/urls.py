@@ -26,6 +26,8 @@ urlpatterns = [
     path('', RedirectView.as_view(url='posts/'), name='index'),
     # Приложение posts_app
     path('posts/', include('posts_app.urls', namespace='posts_app')),
+    # Приложение users_app
+    path('users/', include('users_app.urls', namespace='users_app')),
     # Создание темы на форуме
     path('create_topic/', include('create_topic.urls', namespace='create_topic'))
 ]

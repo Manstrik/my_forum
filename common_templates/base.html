@@ -18,6 +18,10 @@
   {% block auth %}
     <div class="auth">
       {% if user.is_authenticated %}
+        <form method="post" action="{% url 'users_app:logout' %}">
+          {% csrf_token %}
+          <input type="submit" value="Выйти">
+        </form>
         <a>Здравствуйте, {{ user.get_username }}</a>
       {% else %}
         <a>Войти</a>

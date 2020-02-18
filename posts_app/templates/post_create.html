@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-  {% if not user.is_anonymous %}
+  {% if user.is_authenticated %}
     <form class="form" method="post" action="{% url 'posts_app:create' %}" enctype="multipart/form-data">
       {% csrf_token %}
 

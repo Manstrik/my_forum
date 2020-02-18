@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts_app',
-    'create_topic'
+    'create_topic',
+    'users_app'
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'common_templates'),
             os.path.join(BASE_DIR, 'posts_app', 'templates'),
+            os.path.join(BASE_DIR, 'users_app', 'templates'),
             os.path.join(BASE_DIR, 'create_topic', 'templates'),
         ],
         'APP_DIRS': True,
@@ -128,6 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'common_static'),
     os.path.join(BASE_DIR, 'posts_app', 'static'),
+    os.path.join(BASE_DIR, 'users_app', 'static'),
     os.path.join(BASE_DIR, 'create_topic', 'static')
 ]
 
