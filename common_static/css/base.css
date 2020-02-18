@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -10,7 +10,7 @@
 body {
   font-size: 16px;
   margin: 0;
-  animation: 1s ease 0s 1 fadeIn;
+  animation: 1s ease 0s 1 fade-in;
   font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 }
 
