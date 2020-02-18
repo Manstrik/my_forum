@@ -1,5 +1,6 @@
 """Представления для приложения create_topic."""
 
+from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
@@ -27,7 +28,6 @@ def create_post(request):
     """
     text_field = None
     text_post_name = None
-    print(request.GET)
     if request.method == 'POST':  # если запрос пост, то
         if 'text_field' in request.POST:
             text_field = request.POST['text_field']  # текст поста
@@ -51,3 +51,22 @@ def loading_postdb(request):
     """
     posts = CreatePost.objects.all()  # загружаем все данные из БД
     return render(request, 'index.html', locals())  # передаём их в html
+
+
+class SearchPostsInDB():
+    '''Класс для поиска постов в БД'''
+
+    def __init__(self):
+        self.query = None
+
+    def get_text(self, request):
+        self.query = request.GET['search_posts']
+        return self.query
+
+    def searching_in_DB(self):
+        search_query = SearchQuery(self.get_text)
+        search_vector = SearchVector(self.get_text)
+        search_rank = SearchRank(search_vector, search_query)
+        result_searching = CreatePost.objects.annotate(rank=search_rank).order_by('-rank').value_list('text_post_name',
+                                                                                                      'text_field')
+        return result_searching
