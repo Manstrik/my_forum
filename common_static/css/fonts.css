@@ -1,69 +1,69 @@
 @font-face {
   font-family: "Heuristica";
-  src: url("fonts/heuristica/Heuristica-Regular.woff") format("woff");
+  src: url("../fonts/heuristica/Heuristica-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Heuristica";
-  src: url("fonts/heuristica/Heuristica-Bold.woff") format("woff");
+  src: url("../fonts/heuristica/Heuristica-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("fonts/gothamPro/GothamPro.woff") format("woff");
+  src: url("../fonts/gothamPro/GothamPro.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("fonts/gothamPro/GothamPro-Italic.woff") format("woff");
+  src: url("../fonts/gothamPro/GothamPro-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("fonts/gothamPro/GothamPro-Bold.woff") format("woff");
+  src: url("../fonts/gothamPro/GothamPro-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gotham Pro Medium";
-  src: url("fonts/gothamPro/GothamPro-Medium.woff") format("woff");
+  src: url("../fonts/gothamPro/GothamPro-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Alsrubl Verdana";
-  src: url("fonts/alsrubl/alsrubl-verdana-regular.woff") format("woff");
+  src: url("../fonts/alsrubl/alsrubl-verdana-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Old Standart";
-  src: url("fonts/oldstandard/OldStandard-Regular.ttf") format("truetype");
+  src: url("../fonts/oldstandard/OldStandard-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Old Standart TT";
-  src: url("fonts/oldstandard/OldStandardTT-Bold.woff") format("woff");
+  src: url("../fonts/oldstandard/OldStandardTT-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Old Standart TT";
-  src: url("fonts/oldstandard/OldStandard-Italic.ttf") format("truetype");
+  src: url("../fonts/oldstandard/OldStandard-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
@@ -72,5 +72,5 @@
   font-family: "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/fontAwesomeBrands/fa-brands-400.woff") format("woff");
+  src: url("../fonts/fontAwesomeBrands/fa-brands-400.woff") format("woff");
 }
