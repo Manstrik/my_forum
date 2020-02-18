@@ -15,6 +15,7 @@
 </head>
 <body>
 <header class="site-header">
+
   {% block auth %}
     <div class="auth">
       {% if user.is_authenticated %}
@@ -22,12 +23,20 @@
           {% csrf_token %}
           <button class="logout-button" type="submit">Выйти</button>
         </form>
-        <a>Здравствуйте, {{ user.get_username }}</a>
+        <span>Здравствуйте, {{ user.get_username }}</span>
+        <div class="avatar">
+          {% if user.profile.avatar %}
+            <img src="{{ user.profile.avatar.url }}" alt="">
+          {% else %}
+            <img src="{% static 'img/default-avatar.png' %}" alt="">
+          {% endif %}
+        </div>
       {% else %}
         <a>Войти</a>
       {% endif %}
     </div>
   {% endblock %}
+
 </header>
 
 <div class="container">

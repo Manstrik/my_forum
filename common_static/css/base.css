@@ -63,6 +63,22 @@ h2 {
   background-color: rgba(60, 76, 46, 1);
 }
 
+.avatar {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.avatar img {
+  max-width: 36px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
 /* При работе на мобильных устройствах, выключаем мерцание элементов при кликах */
 @media (max-width: 1024px) {
   * {
