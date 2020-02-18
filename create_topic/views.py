@@ -1,6 +1,6 @@
 """Представления для приложения create_topic."""
 
-from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
@@ -53,17 +53,20 @@ def loading_postdb(request):
     return render(request, 'index.html', locals())  # передаём их в html
 
 
-class SearchPostsInDB():
-    '''Класс для поиска постов в БД'''
+class SearchPostsInDB:
+    """Класс для поиска постов в БД."""
 
     def __init__(self):
+        """Метод-конструктор класса."""
         self.query = None
 
     def get_text(self, request):
+        """Метод для получения значения для фильтрации."""
         self.query = request.GET['search_posts']
         return self.query
 
-    def searching_in_DB(self):
+    def searching_in_db(self):
+        """Метод для поиска в БД."""
         search_query = SearchQuery(self.get_text)
         search_vector = SearchVector(self.get_text)
         search_rank = SearchRank(search_vector, search_query)

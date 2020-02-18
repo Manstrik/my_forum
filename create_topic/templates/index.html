@@ -2,81 +2,81 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
 
-    <title>Создать тему</title>
+  <title>Создать тему</title>
 {% endblock %}
 
 {% block body %}
-    <form action="{% url 'create_topic:create_post' %}">
-        <table class="main_table">
-            <tr>
-                <th>
-                    <label>
-                        <textarea class="topic_name" name="post_name"></textarea>
-                    </label>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    {% csrf_token %}
-                    <label>
-                        <textarea class="tinymce" name="text_field"></textarea>
+  <form action="{% url 'create_topic:create_post' %}">
+    <table class="main_table">
+      <tr>
+        <th>
+          <label>
+            <textarea class="topic_name" name="post_name"></textarea>
+          </label>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          {% csrf_token %}
+          <label>
+            <textarea class="tinymce" name="text_field"></textarea>
 
-                        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
-                        <script type="text/javascript"
-                                src="{% static 'plugin/tinymce/tinymce.min.js' %}"></script>
-                        <script type="text/javascript"
-                                src="{% static 'plugin/tinymce/init-tinymce.js' %}"></script>
-                    </label>
-                    {% comment %}<input class="text_field" type="text" name="text_field">{% endcomment %}
-                    <input type="submit" value="создать пост">
-                </td>
-            </tr>
-        </table>
-    </form>
+            <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+            <script type="text/javascript"
+                    src="{% static 'plugin/tinymce/tinymce.min.js' %}"></script>
+            <script type="text/javascript"
+                    src="{% static 'plugin/tinymce/init-tinymce.js' %}"></script>
+          </label>
+          {% comment %}<input class="text_field" type="text" name="text_field">{% endcomment %}
+          <input type="submit" value="создать пост">
+        </td>
+      </tr>
+    </table>
+  </form>
 
-    <form action="{% url 'create_topic:search_post' %}">
-        <p>
-            <label>
-                <input type="search" name="search_posts" placeholder="поиск постов">
-                <input type="submit" value="поиск">
-            </label>
-        </p>
-    </form>
+  <form action="{% url 'create_topic:search_post' %}">
+    <p>
+      <label>
+        <input type="search" name="search_posts" placeholder="поиск постов">
+        <input type="submit" value="поиск">
+      </label>
+    </p>
+  </form>
 
-    {% for i in posts %}
-        <section class="post">
-            <div class="post-inside_head">
-                <div class="post-item">
-                    <h1>
-                        {{ i.post_time }}
-                    </h1>
-                    <h1>
-                        {# Обрати внимание сюда #}
-                        {{ i.post_name|safe }}
-                    </h1>
-                </div>
+  {% for i in posts %}
+    <section class="post">
+      <div class="post-inside_head">
+        <div class="post-item">
+          <h1>
+            {{ i.post_time }}
+          </h1>
+          <h1>
+            {# Обрати внимание сюда #}
+            {{ i.post_name|safe }}
+          </h1>
+        </div>
 
-                <div class="post-item">
-                    <h1>
-                        <img src="{% static 'img/default-post-image.png' %}" alt="">
-                        {{ i.post_user_name }}
-                    </h1>
-                    <h3 class="text_area" id="posted_text">
-                        {# И сюда #}
-                        {{ i.post_text|safe }}
-                    </h3>
-                </div>
-            </div>
-        </section>
-    {% endfor %}
+        <div class="post-item">
+          <h1>
+            <img src="{% static 'img/default-post-image.png' %}" alt="">
+            {{ i.post_user_name }}
+          </h1>
+          <h3 class="text_area" id="posted_text">
+            {# И сюда #}
+            {{ i.post_text|safe }}
+          </h3>
+        </div>
+      </div>
+    </section>
+  {% endfor %}
 {% endblock %}
 
 {% block posts %}
-    <section class="post">
-        <h2>
-            something222 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
-        </h2>
-    </section>
+  <section class="post">
+    <h2>
+      something222 {% comment %}почему вот этого не видно, а выше |^| {% endcomment %}
+    </h2>
+  </section>
 {% endblock %}
