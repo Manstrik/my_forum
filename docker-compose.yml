@@ -39,6 +39,7 @@ services:
       - static:/app/static
       - nginx-config:/app/nginx
       - ./media:/app/media
+      - ./settings.yml:/app/settings.yml
     restart: always
     container_name: my_forum-django
     image: manstrik/my_forum:django

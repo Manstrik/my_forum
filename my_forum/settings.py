@@ -12,23 +12,23 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-from .pss import pss
-from .pss_db import pss_db
-from .secret_key import secret_key
+from utils import cut_protocol, get_config_from_file
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+CONFIG = get_config_from_file(os.path.join(BASE_DIR, 'settings.yml'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secret_key()
+SECRET_KEY = CONFIG['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = CONFIG['DEBUG']
 
-ALLOWED_HOSTS = ['vps706754.ovh.net']
+ALLOWED_HOSTS = [cut_protocol(x) for x in CONFIG['ALLOWED_HOSTS']]
 
 # Application definition
 
@@ -83,10 +83,8 @@ WSGI_APPLICATION = 'my_forum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test',
-        'USER': 'test',
-        'PASSWORD': 'test',
         'HOST': 'my_forum-postgres',
+        **CONFIG['DATABASE'],
     }
 }
 
