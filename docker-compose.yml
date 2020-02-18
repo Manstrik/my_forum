@@ -55,6 +55,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=test
-      - POSTGRES_USER=test
-      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=nikolay
+      - POSTGRES_PASSWORD=Crowel_16
