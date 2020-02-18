@@ -20,7 +20,7 @@
       {% if user.is_authenticated %}
         <form method="post" action="{% url 'users_app:logout' %}">
           {% csrf_token %}
-          <input type="submit" value="Выйти">
+          <button class="logout-button" type="submit">Выйти</button>
         </form>
         <a>Здравствуйте, {{ user.get_username }}</a>
       {% else %}
