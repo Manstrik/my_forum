@@ -13,7 +13,7 @@
         {% if post.preview_image %}
           <img src="{{ post.preview_image.url }}" alt="">
         {% else %}
-          <img src="{% static '' %}" alt="">
+          <img src="{% static 'img/default-post-image.png' %}" alt="">
         {% endif %}
 
         <div class="post-text">
