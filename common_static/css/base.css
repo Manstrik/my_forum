@@ -10,7 +10,6 @@
 body {
   font-size: 16px;
   margin: 0;
-  animation: 1s ease 0s 1 fade-in;
   font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 }
 
@@ -27,12 +26,13 @@ h2 {
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 64px;
+  animation: 1s ease 0s 1 fade-in;
 }
 
 .site-header {
   width: 100%;
   height: 64px;
-  background-color: #1c6ca1;
+  background-color: rgba(27, 86, 127, 1);
   color: white;
   position: fixed;
 }
