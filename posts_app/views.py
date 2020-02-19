@@ -37,4 +37,4 @@ def create_post(request):
 
     Post.objects.create(**data)
 
-    return redirect('posts_app:post-list')
+    return redirect('posts_app:post_list')

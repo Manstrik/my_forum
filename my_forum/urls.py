@@ -23,7 +23,7 @@ urlpatterns = [
     # Админка сайта
     path('admin/', admin.site.urls),
     # Раздел редиректа
-    path('', RedirectView.as_view(url='posts/'), name='index'),
+    path('', RedirectView.as_view(url='posts/'), name='home'),
     # Приложение posts_app
     path('posts/', include('posts_app.urls', namespace='posts_app')),
     # Приложение users_app

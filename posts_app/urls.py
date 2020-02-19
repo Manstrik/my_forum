@@ -9,13 +9,13 @@ app_name = 'posts_app'
 
 urlpatterns = [
     # Главная страница приложения со списком постов
-    path(r'', PostList.as_view(), name='post-list'),
+    path(r'', PostList.as_view(), name='post_list'),
 
     # Страница с детальной информацией о посте
-    path(r'<int:pk>/', PostDetail.as_view(), name='post-detail'),
+    path(r'<int:pk>/', PostDetail.as_view(), name='post_detail'),
 
     # Страница с формой для создания нвого поста
-    path(r'new-post/', TemplateView.as_view(template_name='post_create.html'), name='new-post'),
+    path(r'new/', TemplateView.as_view(template_name='post_create.html'), name='new_post'),
 
     # API-функция для создания поста
     path('create/', create_post, name='create')

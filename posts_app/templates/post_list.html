@@ -9,7 +9,7 @@
 {% block body %}
   <section class="section">
     {% for post in posts %}
-      <a class="post" href="{% url 'posts_app:post-detail' post.pk %}">
+      <a class="post" href="{% url 'posts_app:post_detail' post.pk %}">
         {% if post.preview_image %}
           <img src="{{ post.preview_image.url }}" alt="">
         {% else %}
@@ -32,7 +32,7 @@
 
     {# Только авторизированые пользователи могут добавлять посты #}
     {% if user.is_authenticated %}
-      <a href="{% url 'posts_app:new-post' %}" class="create-post">Создать пост +</a>
+      <a href="{% url 'posts_app:new_post' %}" class="create-post">Создать пост +</a>
     {% endif %}
 
   </section>
