@@ -140,3 +140,4 @@ media
 !posts_app/static
 !create_topic/static
 !users_app/static
+!lib

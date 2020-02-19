@@ -1,9 +1,10 @@
 """Представления для приложения posts_app."""
+
 from django.shortcuts import redirect
 from django.views.generic import DetailView, ListView
 
+from lib.utils import multipart_to_dict
 from posts_app.models import Post
-from posts_app.utils import multipart_to_dict
 
 
 class PostList(ListView):

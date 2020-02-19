@@ -1,8 +1,12 @@
 """Файл сигналов для приложения posts_app."""
 
+import os
+
+from django.conf import settings
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
+from lib.utils import delete_empty_dirs
 from posts_app.models import Post
 
 
@@ -16,3 +20,4 @@ def delete_preview_image(sender, instance: Post, **kwargs):
     :param kwargs: дополнительные параметры
     """
     instance.preview_image.delete(False)
+    delete_empty_dirs(os.path.join(settings.BASE_DIR, 'media'))
