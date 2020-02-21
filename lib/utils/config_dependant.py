@@ -5,7 +5,7 @@ import os
 from yaml import safe_load
 
 
-def cut_protocol(domain: str = '') -> str:
+def cut_protocol(domain):
     """
     Функция, обрезающая из домена протокол и возвращающая только хост.
 
@@ -17,7 +17,7 @@ def cut_protocol(domain: str = '') -> str:
     return domain
 
 
-def get_config_from_file(file: str):
+def get_config_from_file(file):
     """
     Функция для получения распасенного конфига из переданного файла.
 
