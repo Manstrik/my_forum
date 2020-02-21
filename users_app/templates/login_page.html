@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/login_page.css' %}">
+{% endblock %}
+
+{% block body %}
+  <form method="post" class="login-form" action="{% url 'users_app:login' %}">
+    {% csrf_token %}
+
+    <div class="input">
+      <label for="username">Имя пользователя</label>
+      <input id="username" name="username" type="text" autocomplete="username" required>
+    </div>
+
+    <div class="input">
+      <label for="password">Пароль</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+    </div>
+
+    <div class="submit-button">
+      <button type="submit">Войти</button>
+    </div>
+  </form>
+{% endblock %}

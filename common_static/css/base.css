@@ -46,6 +46,11 @@ h2 {
   font-size: 1.1rem;
 }
 
+.login-button {
+  text-decoration: none;
+}
+
+.login-button,
 .logout-button {
   background-color: rgba(60, 76, 46, 0.5);
   color: white;
@@ -57,7 +62,8 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.logout-button:hover {
+.logout-button:hover,
+.login-button:hover {
   cursor: pointer;
   background-color: rgba(60, 76, 46, 1);
 }

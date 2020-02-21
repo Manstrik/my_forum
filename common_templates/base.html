@@ -32,7 +32,7 @@
           {% endif %}
         </div>
       {% else %}
-        <a>Войти</a>
+        <a class="login-button" href="{% url 'users_app:login_page' %}">Войти</a>
       {% endif %}
     </div>
   {% endblock %}
