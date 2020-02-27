@@ -30,6 +30,11 @@ def create_post(request):
     :param request: объект запроса
     :return: редирект на страницу с постами
     """
+    response = redirect('posts_app:post_list')
+
+    if request.method == 'GET':
+        return response
+
     data = multipart_to_dict(request.POST)
 
     data['preview_image'] = request.FILES.get('preview_image', None)
@@ -38,4 +43,4 @@ def create_post(request):
 
     Post.objects.create(**data)
 
-    return redirect('posts_app:post_list')
+    return response
