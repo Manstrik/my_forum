@@ -18,5 +18,5 @@ urlpatterns = [
     path(r'new/', TemplateView.as_view(template_name='post_create.html'), name='new_post'),
 
     # API-функция для создания поста
-    path('create/', create_post, name='create')
+    path(r'create/', create_post, name='create')
 ]
