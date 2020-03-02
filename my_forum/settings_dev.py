@@ -1,7 +1,6 @@
 """Файл настройка для dev-режима."""
 
 import os
-import platform
 
 try:
     from .pss import pss
@@ -21,11 +20,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-DATABASES['default'] = {
-    'ENGINE': 'django.db.backends.sqlite3',
-    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-}
-
 try:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.postgresql',
@@ -37,19 +31,6 @@ try:
         # это не настройка Django - это настройка PostreSQL и менять её надо там
     }
 except NameError:
-    DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'my_forum',
-        'USER': 'vladislav',
-        'PASSWORD': 'test',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'  # порт/ip должен соответствовать порту, на котором "слушает" СУБД
-        # это не настройка Django - это настройка PostreSQL и менять её надо там
-    }
-
-# Настройки БД для Коли
-if (platform.system() == 'Windows' and os.getlogin() == 'Nikolay') \
-        or (platform.system() == 'Linux' and os.getlogin() == 'nikolay'):
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
