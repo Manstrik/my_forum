@@ -9,7 +9,7 @@ app_name = 'posts_app'
 
 urlpatterns = [
     # Главная страница приложения со списком постов
-    path(r'', PostList.as_view(), name='post_list'),
+    path(r'all/', PostList.as_view(), name='post_list'),
 
     # Страница с детальной информацией о посте
     path(r'<int:pk>/', PostDetail.as_view(), name='post_detail'),
