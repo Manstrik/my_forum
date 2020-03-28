@@ -9,6 +9,7 @@
 /* Контейнер с постом */
 .post {
   position: relative;
+
   /* Размещаем по 2 поста в строчку */
   flex: 0 40%;
   display: flex;
@@ -18,6 +19,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   background-color: aliceblue;
+
   /* Убираем стандартные параметры ссылки */
   text-decoration: none;
   color: black;
