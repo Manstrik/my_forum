@@ -137,4 +137,7 @@ media
 !create_topic/static
 !posts_app/static
 !users_app/static
+node_modules
+package.json
+yarn.lock
 

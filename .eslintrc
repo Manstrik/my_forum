@@ -1,0 +1,97 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": [
+    "require-jsdoc-except",
+    "react-hooks",
+    "class-property"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "jsx-a11y/control-has-associated-label": "off",
+    "import/extensions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/static-property-placement": "off",
+    "react/state-in-constructor": "off",
+    "no-param-reassign": "off",
+    "no-return-await": "off",
+    "camelcase": "off",
+    "no-console": "error",
+    "operator-linebreak": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "linebreak-style": 0,
+    "no-extra-semi": "error",
+    "class-property/class-property-semicolon": [
+      "error",
+      "never"
+    ],
+    "max-len": [
+      1,
+      120,
+      4
+    ],
+    "prefer-destructuring": [
+      "error",
+      {
+        "object": true,
+        "array": false
+      }
+    ],
+    "no-restricted-globals": "off",
+    "react/no-did-update-set-state": "off",
+    "react/no-unknown-property": "off",
+    "guard-for-in": "off",
+    "no-restricted-syntax": "off",
+    "import/named": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-tag-spacing": "off",
+    "react/no-unused-prop-types": "off",
+    "react/no-array-index-key": "off",
+    "react/destructuring-assignment": "off",
+    "no-unused-labels": "off",
+    "no-labels": "off",
+    "no-unused-expressions": "off",
+    "object-curly-newline": "off",
+    "no-extra-boolean-cast": "off",
+    "no-trailing-spaces": "off",
+    "import/no-unresolved": "off",
+    "no-throw-literal": "off",
+    "require-jsdoc-except/require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ClassDeclaration": true,
+          "ArrowFunctionExpression": true,
+          "FunctionExpression": true
+        },
+        "ignore": [
+          "constructor",
+          "getDerivedStateFromProps",
+          "shouldComponentUpdate",
+          "render",
+          "getSnapshotBeforeUpdate",
+          "componentDidMount",
+          "componentDidUpdate",
+          "componentWillUnmount"
+        ]
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ]
+  }
+}

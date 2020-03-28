@@ -141,3 +141,4 @@ media
 !create_topic/static
 !users_app/static
 !lib
+node_modules
