@@ -1,6 +1,5 @@
 """Модели приложения users_app."""
 
-from django.contrib.auth.models import User
 from django.db import models
 
 from users_app.utils import get_avatar_upload_path
@@ -9,7 +8,7 @@ from users_app.utils import get_avatar_upload_path
 class Profile(models.Model):
     """Модель профиля пользователя."""
 
-    user = models.OneToOneField(User, models.CASCADE, verbose_name='Пользователь')
+    user = models.OneToOneField('auth.User', models.CASCADE, verbose_name='Пользователь')
 
     avatar = models.ImageField('Аватар профиля', upload_to=get_avatar_upload_path, blank=True, null=True)
     date_of_birth = models.DateField('Дата рождения', blank=True, null=True)
