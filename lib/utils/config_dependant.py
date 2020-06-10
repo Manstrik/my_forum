@@ -25,9 +25,7 @@ def get_config_from_file(file):
     :return: прочитанный конфиг
     """
     if os.environ.get('PROJECT_MODE') is None:
-        with open('settings.sample.yml', 'r') as ymlfile:
-            config = safe_load(ymlfile)
-        return config
+        return {}
     if os.path.exists(file):
         with open(file, 'r') as ymlfile:
             config = safe_load(ymlfile)

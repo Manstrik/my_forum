@@ -23,12 +23,12 @@ CONFIG = get_config_from_file(os.path.join(BASE_DIR, 'settings.yml'))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = CONFIG['SECRET_KEY']
+SECRET_KEY = CONFIG.get('SECRET_KEY', 'test')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = CONFIG['DEBUG']
+DEBUG = CONFIG.get('DEBUG', True)
 
-ALLOWED_HOSTS = [cut_protocol(x) for x in CONFIG['ALLOWED_HOSTS']]
+ALLOWED_HOSTS = [cut_protocol(x) for x in CONFIG.get('ALLOWED_HOSTS', ['*'])]
 
 # Application definition
 
@@ -83,11 +83,10 @@ WSGI_APPLICATION = 'my_forum.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'my_forum-postgres',
-        **CONFIG['DATABASE'],
-    }
+    'default': CONFIG.get('DATABASE', {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }),
 }
 
 # Password validation
@@ -144,7 +143,3 @@ SECURE_PROXY_SSL_HEADER = ('SCHEME', 'https')
 DATE_FORMAT = 'd.m.Y г.'
 
 DATETIME_FORMAT = f'{DATE_FORMAT} H:i'
-
-# Настройки для dev-режима
-if os.getenv('PROJECT_MODE') != 'production':
-    from .settings_dev import *
