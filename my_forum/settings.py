@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts_app',
     'create_topic',
-    'users_app'
+    'users_app',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +64,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'posts_app', 'templates'),
             os.path.join(BASE_DIR, 'users_app', 'templates'),
             os.path.join(BASE_DIR, 'create_topic', 'templates'),
+            os.path.join(BASE_DIR, 'posts_shown', 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -130,7 +131,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'common_static'),
     os.path.join(BASE_DIR, 'posts_app', 'static'),
     os.path.join(BASE_DIR, 'users_app', 'static'),
-    os.path.join(BASE_DIR, 'create_topic', 'static')
+    os.path.join(BASE_DIR, 'create_topic', 'static'),
 ]
 
 MEDIA_URL = '/media/'

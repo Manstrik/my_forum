@@ -1,0 +1,40 @@
+.main_table {
+    border: 3px solid black;
+    background-color: white;
+    border-collapse: collapse;
+    align-items: center;
+    position: relative;
+    margin: 2.5% auto;
+    width: 90%;
+    height: 30%;
+}
+
+th {
+    color: white;
+    text-align: right;
+}
+
+.topic_name {
+    border: unset;
+    width: 98%;
+    transform: translate(-1%);
+    height: 30px;
+    resize: none;
+}
+
+.head_table {
+    border: 2px solid black;
+}
+
+.text_field {
+    color: blue;
+    background: white;
+    outline: none;
+    height: 300px;
+    width: 600px;
+    overflow: auto;
+    resize: none;
+}
+
+input[type='submit'] {
+}

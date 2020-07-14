@@ -29,7 +29,8 @@ urlpatterns = [
     # Приложение users_app
     path('users/', include('users_app.urls', namespace='users_app')),
     # Создание темы на форуме
-    path('create_topic/', include('create_topic.urls', namespace='create_topic'))
+    path('create_topic/', include('create_topic.urls', namespace='create_topic')),
+    # Показ созданных тем
 ]
 
 handler404 = 'my_forum.views.handler404'

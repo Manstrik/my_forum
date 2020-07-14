@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/create_post_page.css' %}" type="text/css">
+
+    <title>Создать тему</title>
+{% endblock %}
+
+
+{% block body %}
+    <form action="{% url 'create_topic:create_post' %}">
+        <table class="main_table">
+            <tr>
+                <th>
+                    <label>
+                        <textarea class="topic_name" name="post_name"></textarea>
+                    </label>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    {% csrf_token %}
+                    <label>
+                        <textarea class="tinymce" name="text_field"></textarea>
+
+                        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+                        <script type="text/javascript"
+                                src="{% static 'plugin/tinymce/tinymce.min.js' %}"></script>
+                        <script type="text/javascript"
+                                src="{% static 'plugin/tinymce/init-tinymce.js' %}"></script>
+                    </label>
+                    {% comment %}<input class="text_field" type="text" name="text_field">{% endcomment %}
+                    <input type="submit" value="создать пост">
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

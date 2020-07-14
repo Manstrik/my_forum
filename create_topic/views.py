@@ -20,6 +20,16 @@ class Index(ListView):
     context_object_name = 'posts'
 
 
+class CreatePostPage(ListView):
+    # класс для создания поста в отдельном окне
+
+    template_name = 'create_post_page.html'
+    # путь к шаблону
+    model = CreatePost
+    # модель информации о посте
+    context_object_name = 'posts'
+
+
 def create_post(request):
     """
     Функция для создания поста.
