@@ -1,6 +1,5 @@
 """Модели приложения posts_app."""
 
-from django.contrib.auth.models import User
 from django.db import models
 
 from posts_app.utils import get_post_image_upload_path
@@ -13,7 +12,7 @@ class Post(models.Model):
     summary = models.TextField('Текст на предпросмотре')
     content = models.TextField('Текст поста')
     added_date = models.DateTimeField('Дата добавления поста', auto_now_add=True)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Кто добавил пост')
+    created_by = models.ForeignKey('auth.User', models.CASCADE, verbose_name='Кто добавил пост')
     preview_image = models.ImageField('Картинка на посте', upload_to=get_post_image_upload_path, blank=True, null=True)
 
     class Meta:
