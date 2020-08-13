@@ -18,14 +18,19 @@
 
   {% block auth %}
     <div class="auth">
-      {% if user.is_authenticated %}
-        <div class="user-info">
+      <div class="user-info">
+        {% if user.is_authenticated %}
           <form method="post" action="{% url 'profiles:logout' %}">
             {% csrf_token %}
             <button class="logout-button" type="submit">Выйти</button>
           </form>
 
-          <span>Здравствуйте, {{ user.get_username }}</span>
+          {% if user.profile %}
+            <span>Здравствуйте, {{ user.first_name }} {{ user.profile.middle_name }}!</span>
+          {% else %}
+            <span>Здравствуйте, {{ user.first_name }}!</span>
+          {% endif %}
+
           <div class="avatar">
             {% if user.profile.avatar %}
               <img src="{{ user.profile.avatar.url }}" alt="">
