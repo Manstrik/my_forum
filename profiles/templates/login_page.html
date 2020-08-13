@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-  <form method="post" class="login-form" action="{% url 'users_app:login' %}">
+  <form method="post" class="login-form" action="{% url 'profiles:login' %}">
     {% csrf_token %}
 
     <div class="input">

@@ -8,7 +8,7 @@
 
 {% block body %}
   {% if user.is_authenticated %}
-    <form class="form" method="post" action="{% url 'posts_app:create' %}" enctype="multipart/form-data">
+    <form class="form" method="post" action="{% url 'posts:create' %}" enctype="multipart/form-data">
       {% csrf_token %}
 
       <span>
