@@ -47,6 +47,12 @@ h2 {
   justify-content: space-between;
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
 .main-page-link {
   display: flex;
   align-items: center;

@@ -8,7 +8,7 @@ from lib.utils import multipart_to_dict
 
 def logout(request):
     """Функция для разлогинивания пользователя."""
-    response = redirect('posts_app:post_list')
+    response = redirect('posts:post_list')
 
     if request.method == 'GET':
         return response
@@ -21,7 +21,7 @@ def logout(request):
 
 def login(request):
     """Функция для входа пользователей пользователя."""
-    response = redirect('posts_app:post_list')
+    response = redirect('posts:post_list')
 
     if request.method == 'GET':
         return response
