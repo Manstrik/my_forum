@@ -34,6 +34,9 @@
       {% else %}
         <a class="login-button" href="{% url 'profiles:login_page' %}">Войти</a>
       {% endif %}
+      <div class="main-page-link">
+        <a href="{% url 'home' %}"><img src="{% static 'favicon.png' %}" alt="Форум"></a>
+      </div>
     </div>
   {% endblock %}
 
