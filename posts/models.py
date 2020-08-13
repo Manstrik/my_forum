@@ -36,3 +36,6 @@ class Comment(models.Model):
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
         db_table = 'comments'
+
+    def __str__(self):
+        return f'Комментарий к посту {self.to_post_id} от {self.author.username}'
