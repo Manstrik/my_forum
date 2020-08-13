@@ -21,7 +21,7 @@
     </p>
 
     <p class="credits">
-      {{ post.added_date }}, {{ post.created_by.username }}
+      {{ post.published }}, {{ post.author.username }}
     </p>
 
     <a class="go-back" href="{% url 'posts:post_list' %}">
