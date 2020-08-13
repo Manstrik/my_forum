@@ -1,4 +1,4 @@
-"""Файл сигналов для приложения posts."""
+"""Сигналы приложения profiles."""
 
 import os
 
@@ -7,11 +7,11 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
 from lib.utils import delete_empty_dirs
-from posts.models import Post
+from profiles.models import Profile
 
 
-@receiver(post_delete, sender=Post)
-def delete_preview_image(sender, instance: Post, **kwargs):
+@receiver(post_delete, sender=Profile)
+def delete_avatar(sender, instance: Profile, **kwargs):
     """
     Сигнал для удаления файла из файловой системы.
 
@@ -19,5 +19,5 @@ def delete_preview_image(sender, instance: Post, **kwargs):
     :param instance: объект модели
     :param kwargs: дополнительные параметры
     """
-    instance.preview_image.delete(False)
+    instance.avatar.delete(False)
     delete_empty_dirs(os.path.join(settings.BASE_DIR, 'media'))

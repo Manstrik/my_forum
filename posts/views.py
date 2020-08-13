@@ -30,7 +30,7 @@ def create_post(request):
     :param request: объект запроса
     :return: редирект на страницу с постами
     """
-    response = redirect('posts_app:post_list')
+    response = redirect('posts:post_list')
 
     if request.method == 'GET':
         return response
@@ -39,7 +39,9 @@ def create_post(request):
 
     data['preview_image'] = request.FILES.get('preview_image', None)
 
-    data['created_by'] = request.user
+    data['author'] = request.user
+
+    print(data)
 
     Post.objects.create(**data)
 

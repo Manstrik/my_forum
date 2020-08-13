@@ -12,4 +12,4 @@ class PostsAppConfig(AppConfig):
     def ready(self):
         """Функция, выполняемая после запуска приложения. Делает импорт сигналов для моделей."""
         # noinspection PyUnresolvedReferences
-        from posts import signals  # noqa F401
+        from posts import signals # noqa F401
