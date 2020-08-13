@@ -11,7 +11,7 @@ class PostList(ListView):
     """Класс-представление страницы с постами приложения posts_app."""
 
     template_name = 'post_list.html'
-    model = Post
+    queryset = Post.objects.select_related('created_by')
     context_object_name = 'posts'
 
 
@@ -19,7 +19,7 @@ class PostDetail(DetailView):
     """Класс-представление страницы с детальной информацией о посте приложения posts_app."""
 
     template_name = 'post_detail.html'
-    model = Post
+    queryset = Post.objects.select_related('created_by')
     context_object_name = 'post'
 
 
