@@ -1,4 +1,4 @@
-"""Файл с представлениями приложение users_app."""
+"""Файл с представлениями приложение profiles."""
 
 from django.contrib.auth import authenticate, login as django_login, logout as django_logout
 from django.shortcuts import redirect

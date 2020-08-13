@@ -1,4 +1,4 @@
-"""Файл сигналов для приложения posts_app."""
+"""Файл сигналов для приложения posts."""
 
 import os
 
@@ -7,7 +7,7 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
 from lib.utils import delete_empty_dirs
-from posts_app.models import Post
+from posts.models import Post
 
 
 @receiver(post_delete, sender=Post)

@@ -1,15 +1,15 @@
-"""Конфигурационный файл приложения users_app."""
+"""Конфигурационный файл приложения profiles."""
 
 from django.apps import AppConfig
 
 
-class UsersAppConfig(AppConfig):
-    """Класс-конфиг для приложения users_app."""
+class ProfilesConfig(AppConfig):
+    """Класс-конфиг для приложения profiles."""
 
-    name = 'users_app'
+    name = 'profiles'
     verbose_name = 'Данные о пользователях форума'
 
     def ready(self):
         """Функция, выполняемая после запуска приложения. Делает импорт сигналов для моделей."""
         # noinspection PyUnresolvedReferences
-        from users_app import signals  # noqa F401
+        from profiles import signals  # noqa F401

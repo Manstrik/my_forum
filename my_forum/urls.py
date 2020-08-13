@@ -24,10 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Раздел редиректа
     path('', RedirectView.as_view(url='posts/'), name='home'),
-    # Приложение posts_app
-    path('posts/', include('posts_app.urls', namespace='posts_app')),
-    # Приложение users_app
-    path('users/', include('users_app.urls', namespace='users_app')),
+    # Приложение posts
+    path('posts/', include('posts.urls', namespace='posts')),
+    # Приложение profiles
+    path('profiles/', include('profiles.urls', namespace='profiles')),
     # Создание темы на форуме
     path('create_topic/', include('create_topic.urls', namespace='create_topic')),
     # Показ созданных тем

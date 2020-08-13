@@ -1,8 +1,8 @@
-"""Модели приложения posts_app."""
+"""Модели приложения posts."""
 
 from django.db import models
 
-from posts_app.utils import get_post_image_upload_path
+from posts.utils import get_post_image_upload_path
 
 
 class Post(models.Model):
@@ -18,7 +18,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
-        ordering = ['id']
+        db_table = 'posts'
 
     def __str__(self):
         return self.title

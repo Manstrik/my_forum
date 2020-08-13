@@ -1,14 +1,14 @@
-"""Представления для приложения posts_app."""
+"""Представления для приложения posts."""
 
 from django.shortcuts import redirect
 from django.views.generic import DetailView, ListView
 
 from lib.utils import multipart_to_dict
-from posts_app.models import Post
+from posts.models import Post
 
 
 class PostList(ListView):
-    """Класс-представление страницы с постами приложения posts_app."""
+    """Класс-представление страницы с постами приложения posts."""
 
     template_name = 'post_list.html'
     queryset = Post.objects.select_related('created_by')
@@ -16,7 +16,7 @@ class PostList(ListView):
 
 
 class PostDetail(DetailView):
-    """Класс-представление страницы с детальной информацией о посте приложения posts_app."""
+    """Класс-представление страницы с детальной информацией о посте приложения posts."""
 
     template_name = 'post_detail.html'
     queryset = Post.objects.select_related('created_by')

@@ -1,11 +1,11 @@
-"""Файл маршрутов приложения posts_app."""
+"""Файл маршрутов приложения posts."""
 
 from django.urls import path
 from django.views.generic import TemplateView
 
-from posts_app.views import create_post, PostDetail, PostList
+from posts.views import create_post, PostDetail, PostList
 
-app_name = 'posts_app'
+app_name = 'posts'
 
 urlpatterns = [
     # Главная страница приложения со списком постов

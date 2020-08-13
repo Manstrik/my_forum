@@ -1,8 +1,8 @@
-"""Модели приложения users_app."""
+"""Модели приложения profiles."""
 
 from django.db import models
 
-from users_app.utils import get_avatar_upload_path
+from profiles.utils import get_avatar_upload_path
 
 
 class Profile(models.Model):
@@ -17,7 +17,7 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'Профиль пользователя'
         verbose_name_plural = 'Профили пользователей'
-        ordering = ['id']
+        db_table = 'profiles'
 
     def __str__(self):
         return f'Профиль пользователя {self.user.username}'

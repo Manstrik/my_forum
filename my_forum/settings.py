@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'posts_app',
+    'posts',
     'create_topic',
-    'users_app',
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -61,8 +61,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'common_templates'),
-            os.path.join(BASE_DIR, 'posts_app', 'templates'),
-            os.path.join(BASE_DIR, 'users_app', 'templates'),
+            os.path.join(BASE_DIR, 'posts', 'templates'),
+            os.path.join(BASE_DIR, 'profiles', 'templates'),
             os.path.join(BASE_DIR, 'create_topic', 'templates'),
             os.path.join(BASE_DIR, 'posts_shown', 'templates')
         ],
@@ -129,8 +129,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'common_static'),
-    os.path.join(BASE_DIR, 'posts_app', 'static'),
-    os.path.join(BASE_DIR, 'users_app', 'static'),
+    os.path.join(BASE_DIR, 'posts', 'static'),
+    os.path.join(BASE_DIR, 'profiles', 'static'),
     os.path.join(BASE_DIR, 'create_topic', 'static'),
 ]
 

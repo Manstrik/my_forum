@@ -137,8 +137,8 @@ static
 /my_forum/pss_db.py
 /common_templates/learning_JS/
 media
-!posts_app/static
+!posts/static
 !create_topic/static
-!users_app/static
+!profiles/static
 !lib
 node_modules

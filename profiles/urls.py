@@ -1,11 +1,11 @@
-"""Файл маршрутов приложения users_app."""
+"""Файл маршрутов приложения profiles."""
 
 from django.urls import path
 from django.views.generic import TemplateView
 
-from users_app.views import login, logout
+from profiles.views import login, logout
 
-app_name = 'users_app'
+app_name = 'profiles'
 
 urlpatterns = [
     # Метод для выхода пользователя
