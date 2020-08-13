@@ -12,7 +12,7 @@ class Post(models.Model):
     summary = models.TextField('Текст на предпросмотре')
     content = models.TextField('Текст поста')
     published = models.DateTimeField('Дата публикации поста', auto_now_add=True)
-    author = models.ForeignKey('auth.User', models.CASCADE, verbose_name='Автор поста')
+    author = models.ForeignKey('auth.User', models.CASCADE, verbose_name='Автор поста', related_name='posts')
     preview_image = models.ImageField('Картинка на посте', upload_to=get_post_image_upload_path, blank=True, null=True)
 
     class Meta:
@@ -28,9 +28,9 @@ class Comment(models.Model):
     """Модель комментария к постую"""
 
     text = models.TextField('Текст комментария', blank=True, null=True)
-    author = models.ForeignKey('auth.User', models.CASCADE, verbose_name='Автор комментария')
+    author = models.ForeignKey('auth.User', models.CASCADE, verbose_name='Автор комментария', related_name='comments')
     published = models.DateTimeField('Дата публикации', auto_now_add=True)
-    to_post = models.ForeignKey('Post', models.CASCADE, verbose_name='Пост')
+    to_post = models.ForeignKey('Post', models.CASCADE, verbose_name='Пост', related_name='comments')
 
     class Meta:
         verbose_name = 'Комментарий'
