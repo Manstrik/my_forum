@@ -25,6 +25,10 @@
           {{ post.published }}, {{ post.author.get_username }}
         </div>
 
+        <div class="post-comment-count">
+          <i class="far fa-comment-alt comment-icon"></i>{{ post.comments.count }}
+        </div>
+
       </a>
     {% empty %}
       <h1>Постов не найдено.</h1>
