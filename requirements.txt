@@ -7,7 +7,7 @@ flake8-docstrings==1.6.0
 flake8-import-order==0.18.1
 flake8-quotes==3.2.0
 mccabe==0.6.1
-Pillow==8.2.0
+Pillow==8.3.2
 psycopg2-binary==2.8.6
 pycodestyle==2.7.0
 pydocstyle==6.1.1
