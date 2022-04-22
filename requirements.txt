@@ -1,5 +1,5 @@
 asgiref
-Django==3.2.8
+Django==3.2.13
 flake8
 flake8-builtins
 flake8-docstrings
